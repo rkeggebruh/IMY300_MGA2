@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://fqojp04081c1"]
+
+[ext_resource type="PackedScene" uid="uid://bi4uue2ntjxvf" path="res://characters/ninja_cat.tscn" id="1_rlmqk"]
+[ext_resource type="Script" path="res://scenes/training.gd" id="1_x3m42"]
+
+[node name="training" type="Node2D"]
+script = ExtResource("1_x3m42")
+
+[node name="ninjaCat" parent="." instance=ExtResource("1_rlmqk")]
+position = Vector2(365, 464)
+scale = Vector2(8, 8)

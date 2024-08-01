@@ -1,0 +1,160 @@
+[gd_scene load_steps=9 format=3 uid="uid://fqojp04081c1"]
+
+[ext_resource type="PackedScene" uid="uid://bi4uue2ntjxvf" path="res://characters/ninja_cat.tscn" id="1_rlmqk"]
+[ext_resource type="Script" path="res://scenes/training.gd" id="1_x3m42"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="3_rtr11"]
+[ext_resource type="Texture2D" uid="uid://dnf8fn0wkgpr" path="res://assets/light.png" id="4_ahld4"]
+[ext_resource type="Texture2D" uid="uid://brunjxg8je1ff" path="res://assets/punch (1).png" id="5_ac3ss"]
+[ext_resource type="Texture2D" uid="uid://d167xw32pronc" path="res://assets/woodenfloor.png" id="6_lf68d"]
+[ext_resource type="Texture2D" uid="uid://dbj20vnwcnlyh" path="res://assets/lightOnWall-pixelicious.png" id="7_j64lw"]
+[ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="8_qy2hp"]
+
+[node name="training" type="Node2D"]
+script = ExtResource("1_x3m42")
+
+[node name="LightOnWall-pixelicious(1)" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(581, 244)
+scale = Vector2(2.41602, 2.50367)
+texture = ExtResource("8_qy2hp")
+
+[node name="ninjaCat" parent="." instance=ExtResource("1_rlmqk")]
+z_index = 1
+position = Vector2(690, 430)
+scale = Vector2(8, 8)
+
+[node name="labelKick" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 448.0
+offset_right = 521.0
+offset_bottom = 557.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("3_rtr11")
+theme_override_font_sizes/font_size = 60
+text = "PRESS SPACE 5 TIMES TO
+DO A DOUBLE KICK"
+
+[node name="labelKickFlip" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 448.0
+offset_right = 521.0
+offset_bottom = 557.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("3_rtr11")
+theme_override_font_sizes/font_size = 60
+text = "PRESS DOWN 4 TIMES TO
+DO A KICK FLIP"
+
+[node name="labelUppercut" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 313.0
+offset_right = 759.0
+offset_bottom = 422.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("3_rtr11")
+theme_override_font_sizes/font_size = 60
+text = "PRESS UP 3 TIMES TO DO 
+AN UPPERCUT"
+
+[node name="Light" type="Sprite2D" parent="."]
+position = Vector2(560, 91)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ahld4")
+
+[node name="Punch(1)" type="Sprite2D" parent="."]
+position = Vector2(901, 276)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_ac3ss")
+
+[node name="Woodenfloor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(41, 621)
+rotation = 1.5708
+scale = Vector2(3.43345, 7.96928)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -31.8724)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor3" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -15.9362)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor4" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -47.8086)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor5" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -63.7448)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor6" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(-1.52588e-05, -79.681)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor7" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -95.6172)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor8" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -111.553)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor9" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(-1.52588e-05, -127.49)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="Woodenfloor10" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -143.426)
+texture = ExtResource("6_lf68d")
+flip_v = true
+
+[node name="LightOnWall-pixelicious" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(1900, 313)
+scale = Vector2(2.45898, 2.43622)
+texture = ExtResource("7_j64lw")
+
+[node name="break" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="display" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="break" to="." method="_on_break_timeout"]
+[connection signal="timeout" from="display" to="." method="_on_display_timeout"]

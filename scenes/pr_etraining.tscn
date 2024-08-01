@@ -1,0 +1,253 @@
+[gd_scene load_steps=25 format=3 uid="uid://26ntb163pfke"]
+
+[ext_resource type="Script" path="res://scenes/pr_etraining.gd" id="1_0cgbj"]
+[ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="2_0gtu0"]
+[ext_resource type="PackedScene" uid="uid://bi4uue2ntjxvf" path="res://characters/ninja_cat.tscn" id="3_l2gtw"]
+[ext_resource type="Texture2D" uid="uid://dnf8fn0wkgpr" path="res://assets/light.png" id="4_eb6rr"]
+[ext_resource type="Texture2D" uid="uid://d167xw32pronc" path="res://assets/woodenfloor.png" id="5_6mo4u"]
+[ext_resource type="Texture2D" uid="uid://dbj20vnwcnlyh" path="res://assets/lightOnWall-pixelicious.png" id="6_osj85"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="7_engqs"]
+[ext_resource type="Texture2D" uid="uid://cpave6lqvc4w" path="res://assets/Keyboard Letters and Symbols.png" id="8_hdesf"]
+[ext_resource type="Texture2D" uid="uid://b7htmbxe6y4so" path="res://assets/Keyboard Extras.png" id="9_m8qyn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2oaq"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(16, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llvx0"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ql4ij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2oaq")
+}],
+"loop": false,
+"name": &"clicked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llvx0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sate"]
+atlas = ExtResource("9_m8qyn")
+region = Rect2(64, 96, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpaau"]
+atlas = ExtResource("9_m8qyn")
+region = Rect2(64, 32, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksc16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sate")
+}],
+"loop": false,
+"name": &"clicked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpaau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot0cu"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1alpo"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwmb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot0cu")
+}],
+"loop": false,
+"name": &"clicked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1alpo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5uku"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(32, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpcyi"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_na0i4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5uku")
+}],
+"loop": false,
+"name": &"clicked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpcyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8ahu"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(48, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sh0r"]
+atlas = ExtResource("8_hdesf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pas24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8ahu")
+}],
+"loop": false,
+"name": &"clicked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sh0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PREtraining" type="Node2D"]
+script = ExtResource("1_0cgbj")
+
+[node name="LightOnWall-pixelicious(1)" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(586, -75)
+scale = Vector2(2.41602, 4.2522)
+texture = ExtResource("2_0gtu0")
+
+[node name="ninjaCat" parent="." instance=ExtResource("3_l2gtw")]
+z_index = 1
+position = Vector2(823, 374)
+scale = Vector2(8, 8)
+
+[node name="Light" type="Sprite2D" parent="."]
+position = Vector2(573, -146)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_eb6rr")
+
+[node name="Woodenfloor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(185.323, 558.82)
+rotation = 1.5708
+scale = Vector2(11.2059, 26.0097)
+texture = ExtResource("5_6mo4u")
+flip_v = true
+
+[node name="Woodenfloor2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(601, 559)
+rotation = 1.5708
+scale = Vector2(11.2059, 26.0097)
+texture = ExtResource("5_6mo4u")
+flip_v = true
+
+[node name="Woodenfloor3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1017, 559)
+rotation = 1.5708
+scale = Vector2(11.2059, 26.0097)
+texture = ExtResource("5_6mo4u")
+flip_v = true
+
+[node name="LightOnWall-pixelicious" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(1900, 313)
+scale = Vector2(2.45898, 2.43622)
+texture = ExtResource("6_osj85")
+
+[node name="welcom" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 472.0
+offset_top = 164.0
+offset_right = 1050.0
+offset_bottom = 273.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("7_engqs")
+theme_override_font_sizes/font_size = 60
+text = "WELCOME TO YOUR TRAINING..."
+metadata/_edit_use_anchors_ = true
+
+[node name="down" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(243, 302)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_ql4ij")
+autoplay = "default"
+
+[node name="space" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(243, 491)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_ksc16")
+autoplay = "default"
+
+[node name="up" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(249, 78)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_uwmb4")
+autoplay = "default"
+
+[node name="left" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(101, 182)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_na0i4")
+autoplay = "default"
+
+[node name="right" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(383, 197)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_pas24")
+autoplay = "default"
+
+[connection signal="animation_finished" from="down" to="." method="_on_down_animation_finished"]
+[connection signal="animation_finished" from="space" to="." method="_on_space_animation_finished"]
+[connection signal="animation_finished" from="up" to="." method="_on_up_animation_finished"]
+[connection signal="animation_finished" from="left" to="." method="_on_left_animation_finished"]
+[connection signal="animation_finished" from="right" to="." method="_on_right_animation_finished"]
