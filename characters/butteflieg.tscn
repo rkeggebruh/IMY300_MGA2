@@ -1,0 +1,211 @@
+[gd_scene load_steps=30 format=3 uid="uid://bjel35eh3y81q"]
+
+[ext_resource type="Script" path="res://characters/butteflieg.gd" id="1_ea0gw"]
+[ext_resource type="Texture2D" uid="uid://bdtkiukyo8h2w" path="res://assets/butt.png" id="2_8wb0j"]
+[ext_resource type="Texture2D" uid="uid://clrr7maa7r4bx" path="res://assets/49685498_9285857.jpg" id="2_h1qdx"]
+[ext_resource type="Texture2D" uid="uid://g7wuktammo36" path="res://assets/soap.png" id="2_r1t5f"]
+[ext_resource type="Texture2D" uid="uid://dhwve1l474pm7" path="res://assets/Cat-2-Run.png" id="3_ubf33"]
+[ext_resource type="Texture2D" uid="uid://dhexc7nwpw26w" path="res://assets/Cat-2-Walk.png" id="4_4syik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vqpe"]
+atlas = ExtResource("2_8wb0j")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrh1b"]
+atlas = ExtResource("2_8wb0j")
+region = Rect2(16, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3bk7"]
+atlas = ExtResource("2_8wb0j")
+region = Rect2(32, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40pej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vqpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrh1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3bk7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e00l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48exp"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo0m7"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q05e"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vervp"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akrgy"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcjjm"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs6xg"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjeh6"]
+atlas = ExtResource("3_ubf33")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3m2u"]
+atlas = ExtResource("4_4syik")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us16e"]
+atlas = ExtResource("4_4syik")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4q33"]
+atlas = ExtResource("4_4syik")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeuee"]
+atlas = ExtResource("4_4syik")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f42pl"]
+atlas = ExtResource("4_4syik")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s08h0"]
+atlas = ExtResource("4_4syik")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnnt1"]
+atlas = ExtResource("4_4syik")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5v4a"]
+atlas = ExtResource("4_4syik")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o42yi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48exp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo0m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q05e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vervp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akrgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcjjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs6xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjeh6")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3m2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us16e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4q33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeuee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f42pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s08h0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnnt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5v4a")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obt6n"]
+size = Vector2(132, 111)
+
+[node name="butteflieg" type="Node2D"]
+script = ExtResource("1_ea0gw")
+
+[node name="496854989285857" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(586, 214)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_h1qdx")
+
+[node name="butterfly" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(573, 328)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_40pej")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="butterfly"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="butterfly/Area2D"]
+shape = SubResource("RectangleShape2D_7e00l")
+
+[node name="cat" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="cat"]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_o42yi")
+animation = &"run"
+autoplay = "walk"
+
+[node name="Sprite2D" type="Sprite2D" parent="cat"]
+visible = false
+texture = ExtResource("2_r1t5f")
+
+[node name="cat" type="CollisionShape2D" parent="cat"]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_obt6n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="body_entered" from="butterfly/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

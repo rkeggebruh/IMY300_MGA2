@@ -184,6 +184,7 @@ scale = Vector2(5, 5)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_erf85")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.1, 0.749999)

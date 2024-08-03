@@ -1,3 +1,165 @@
-[gd_scene format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=16 format=3 uid="uid://chiy7402jppk"]
+
+[ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
+[ext_resource type="Texture2D" uid="uid://dnf8fn0wkgpr" path="res://assets/light.png" id="2_8yivh"]
+[ext_resource type="Texture2D" uid="uid://d167xw32pronc" path="res://assets/woodenfloor.png" id="3_pub0e"]
+[ext_resource type="PackedScene" uid="uid://dpnq6h87t2fl7" path="res://characters/black_cat.tscn" id="4_orxwe"]
+[ext_resource type="Texture2D" uid="uid://dv1gpqy1ivnws" path="res://assets/plant.png" id="6_ogxvk"]
+[ext_resource type="Texture2D" uid="uid://c2w6p0fgoyu22" path="res://assets/table.png" id="7_22nyl"]
+[ext_resource type="Texture2D" uid="uid://cuxax1j7wb6ov" path="res://assets/plat2.png" id="7_cwi51"]
+[ext_resource type="Texture2D" uid="uid://dh1f1vb3yawwu" path="res://assets/plant3.png" id="9_4wlpg"]
+[ext_resource type="Texture2D" uid="uid://g1v3b0isgc4g" path="res://assets/table2.png" id="9_malsa"]
+[ext_resource type="Texture2D" uid="uid://bw6u31bd7xqp8" path="res://assets/cup.png" id="10_uchps"]
+[ext_resource type="Texture2D" uid="uid://d1lsla5yufg7t" path="res://assets/picture.png" id="11_lwkyl"]
+[ext_resource type="Texture2D" uid="uid://2rjhx7gedxj6" path="res://assets/pixel-art-1653940255.png" id="12_81giv"]
+[ext_resource type="Texture2D" uid="uid://g7wuktammo36" path="res://assets/soap.png" id="13_l7k4u"]
+[ext_resource type="Texture2D" uid="uid://bx3w2fy5fwu5" path="res://assets/health.png" id="14_eypy6"]
+[ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="15_yhoo6"]
 
 [node name="home" type="Node2D"]
+
+[node name="Turw-pixelicious(1)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(482, 589)
+scale = Vector2(3.08008, 3.08543)
+texture = ExtResource("1_r1qvv")
+
+[node name="Light" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(560, 91)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_8yivh")
+
+[node name="Woodenfloor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(41.0001, 597.666)
+rotation = 1.5708
+scale = Vector2(6.35026, 7.96928)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -31.8724)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor3" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -15.9362)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor4" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -47.8086)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor5" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -63.7448)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor6" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(-1.52588e-05, -79.681)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor7" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -95.6172)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor8" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -111.553)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor9" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(-1.52588e-05, -127.49)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor10" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -143.426)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="black cat" parent="." instance=ExtResource("4_orxwe")]
+position = Vector2(552, 542)
+scale = Vector2(10, 10)
+
+[node name="Plant" type="Sprite2D" parent="."]
+position = Vector2(1040, 478)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("6_ogxvk")
+
+[node name="Table" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-196, 335)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_22nyl")
+
+[node name="Table2" type="Sprite2D" parent="."]
+position = Vector2(167, 511)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_malsa")
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(217, 405)
+scale = Vector2(0.212435, 0.212435)
+texture = ExtResource("10_uchps")
+
+[node name="Plat2" type="Sprite2D" parent="."]
+position = Vector2(-213, 485)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("7_cwi51")
+
+[node name="Plant3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(117, 302)
+scale = Vector2(1.32813, 1.32813)
+texture = ExtResource("9_4wlpg")
+
+[node name="Picture" type="Sprite2D" parent="."]
+position = Vector2(900, 182)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_lwkyl")
+
+[node name="Pixel-art-1653940255" type="Sprite2D" parent="."]
+position = Vector2(434, -246)
+scale = Vector2(0.428977, 0.428977)
+texture = ExtResource("12_81giv")
+
+[node name="Health" type="Sprite2D" parent="."]
+position = Vector2(87.0625, -352.5)
+scale = Vector2(0.289286, 0.289286)
+texture = ExtResource("14_eypy6")
+
+[node name="Health2" type="Sprite2D" parent="."]
+position = Vector2(86.0625, -302.5)
+scale = Vector2(0.289286, 0.289286)
+texture = ExtResource("14_eypy6")
+
+[node name="Health3" type="Sprite2D" parent="."]
+position = Vector2(86.0625, -255.5)
+scale = Vector2(0.289286, 0.289286)
+texture = ExtResource("14_eypy6")
+
+[node name="Soap" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(39.0625, -263.5)
+scale = Vector2(0.356111, 0.356111)
+texture = ExtResource("13_l7k4u")
+
+[node name="CatFood" type="Sprite2D" parent="."]
+position = Vector2(38.0625, -306.5)
+scale = Vector2(0.0687067, 0.0542725)
+texture = ExtResource("15_yhoo6")
