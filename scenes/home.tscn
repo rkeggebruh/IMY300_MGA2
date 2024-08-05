@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=22 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bx3w2fy5fwu5" path="res://assets/health.png" id="14_eypy6"]
 [ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="15_yhoo6"]
 [ext_resource type="Texture2D" uid="uid://c40sj5s0denkl" path="res://assets/heart3.png" id="17_pa20h"]
+[ext_resource type="Texture2D" uid="uid://c1ioqyd1dpvw" path="res://assets/catbed.png" id="18_07ao3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kfw2"]
 bg_color = Color(0.988235, 0.858824, 0.905882, 1)
@@ -240,6 +241,11 @@ scale = Vector2(0.289167, 0.289167)
 texture = ExtResource("13_l7k4u")
 
 [node name="heart1Time" type="Timer" parent="."]
+
+[node name="Catbed" type="Sprite2D" parent="."]
+position = Vector2(813, 542)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("18_07ao3")
 
 [connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
 [connection signal="mouse_entered" from="pettingCat" to="." method="_on_petting_cat_mouse_entered"]
