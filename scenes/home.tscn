@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=27 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ioqyd1dpvw" path="res://assets/catbed.png" id="18_07ao3"]
 [ext_resource type="Texture2D" uid="uid://c1om412lk7ytc" path="res://assets/Cat-2-Laying.png" id="20_m8up0"]
 [ext_resource type="AudioStream" uid="uid://bkg0mblk25fyx" path="res://audio/Cat Purring Sound Effect!.mp3" id="21_fivqh"]
+[ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="22_v8gqg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kfw2"]
 bg_color = Color(0.988235, 0.858824, 0.905882, 1)
@@ -297,6 +298,8 @@ wait_time = 6.0
 
 [node name="purring" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_fivqh")
+
+[node name="UI" parent="." instance=ExtResource("22_v8gqg")]
 
 [connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
 [connection signal="timeout" from="heart1Time" to="." method="_on_heart_1_time_timeout"]

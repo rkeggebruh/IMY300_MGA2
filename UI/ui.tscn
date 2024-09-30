@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c47dh28peh6c1"]
+
+[ext_resource type="Texture2D" uid="uid://kityp1dj10j0" path="res://assets/cog.PNG" id="1_dmi2x"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_n0cnp"]
+[ext_resource type="PackedScene" uid="uid://dke7mau8lj5a3" path="res://UI/pause_menu.tscn" id="3_em15d"]
+
+[sub_resource type="Animation" id="Animation_kjrx4"]
+resource_name = "spin"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cog:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0944, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5d3i"]
+_data = {
+"spin": SubResource("Animation_kjrx4")
+}
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_n0cnp")
+
+[node name="Cog" type="Sprite2D" parent="."]
+position = Vector2(1093, 52)
+scale = Vector2(0.506579, 0.506579)
+texture = ExtResource("1_dmi2x")
+
+[node name="cogArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cogArea"]
+polygon = PackedVector2Array(1064, 16, 1049, 59, 1078, 89, 1128, 76, 1136, 46, 1117, 19, 1092, 8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t5d3i")
+}
+
+[node name="pauseMenu" parent="." instance=ExtResource("3_em15d")]
+
+[connection signal="body_entered" from="cogArea" to="." method="_on_cog_area_body_entered"]
+[connection signal="body_exited" from="cogArea" to="." method="_on_cog_area_body_exited"]
+[connection signal="input_event" from="cogArea" to="." method="_on_cog_area_input_event"]
+[connection signal="mouse_entered" from="cogArea" to="." method="_on_cog_area_mouse_entered"]

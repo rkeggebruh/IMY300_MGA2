@@ -3,6 +3,9 @@ extends Control
 var letterCount = 0
 var label_text = "The adventures of MEOWCHI"  # Your label's actual text
 var flash_color = Color(1, 0.42, 0.478)  # Color to flash the letter
+var exit = false
+var opt = false
+var start = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,3 +42,24 @@ func _on_break_timer_timeout():
 	$breakTimer.stop()
 	letterCount = 0
 	$Timer.start()
+
+
+func _on_start_pressed():
+	$click.play()
+	start = true
+	#get_tree().change_scene_to_file("res://scenes/home.tscn")
+
+
+func _on_quit_pressed():
+	exit = true
+	$click.play()
+	#get_tree().quit()
+
+
+func _on_click_finished():
+	if start:
+		get_tree().change_scene_to_file("res://scenes/home.tscn")
+		start = false
+	elif exit:
+		get_tree().quit()
+		exit = false

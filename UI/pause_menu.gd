@@ -1,11 +1,5 @@
-extends Node
+extends Control
 
-var catOptOne = false
-var catOptTwo = false
-var catOptThree = false
-var catSpeed = 0.08
-var catSleeping = false
-var menuShow = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,3 +9,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_resume_pressed():
+	State.menuShow = false
+	$".".hide()
+
+
+func _on_exit_to_main_pressed():
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

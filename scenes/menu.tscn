@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://uu7k4517dbs4"]
+[gd_scene load_steps=62 format=3 uid="uid://uu7k4517dbs4"]
 
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="1_ancph"]
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_aof2v"]
@@ -9,12 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://c1gcusdvymxcw" path="res://assets/MenuBg.png" id="6_ofu16"]
 [ext_resource type="Texture2D" uid="uid://8yoavuhfwc8i" path="res://assets/butterfly.png" id="8_8cx4p"]
 [ext_resource type="Script" path="res://scenes/butterflypath.gd" id="8_t2xpv"]
+[ext_resource type="AudioStream" uid="uid://b4d8mmcfeup8o" path="res://audio/clickShort.mp3" id="10_sflih"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_414dd"]
 bg_color = Color(0.223529, 0.643137, 0.952941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrmf7"]
 bg_color = Color(0.121569, 0.560784, 0.854902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3a4d"]
+bg_color = Color(0.0666667, 0.466667, 0.721569, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5vfu"]
 bg_color = Color(0.207843, 0.498039, 0.423529, 1)
@@ -27,6 +31,9 @@ bg_color = Color(0.843137, 0.286275, 0.388235, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngfr0"]
 bg_color = Color(0.666667, 0.188235, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t8jd"]
+bg_color = Color(0.564706, 0.14902, 0.231373, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oenlr"]
 atlas = ExtResource("2_mook5")
@@ -374,6 +381,7 @@ theme_override_fonts/font = ExtResource("1_ancph")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_414dd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yrmf7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w3a4d")
 text = "Start"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
@@ -390,6 +398,7 @@ theme_override_fonts/font = ExtResource("1_ancph")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_gb2wv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ngfr0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3t8jd")
 text = "Quit"
 
 [node name="walking" type="AnimatedSprite2D" parent="."]
@@ -426,26 +435,6 @@ sprite_frames = SubResource("SpriteFrames_ienoa")
 autoplay = "default"
 frame = 9
 frame_progress = 0.681877
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -530.0
-offset_top = 361.0
-offset_right = 685.0
-offset_bottom = 619.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.419608, 0.478431, 1)
-theme_override_fonts/font = ExtResource("1_ancph")
-theme_override_font_sizes/font_size = 150
-text = "The adventures of
-MEOWCHI"
-horizontal_alignment = 1
 
 [node name="MenuBg" type="Sprite2D" parent="."]
 modulate = Color(0.733333, 0.733333, 0.733333, 1)
@@ -497,5 +486,11 @@ sprite_frames = SubResource("SpriteFrames_ogwbd")
 animation = &"left"
 autoplay = "right"
 
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sflih")
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]
+[connection signal="finished" from="click" to="." method="_on_click_finished"]
