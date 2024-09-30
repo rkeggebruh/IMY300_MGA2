@@ -14,3 +14,7 @@ config/name="pets"
 run/main_scene="res://scenes/home.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+State="*res://state.gd"

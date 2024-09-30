@@ -8,7 +8,7 @@ var speed_increment = 0.05  # 5%
 #var arrow = load("res://assets/plant3.png")
 
 func _ready():
-	$Node2D/butterfly.position = get_global_mouse_position()
+	#$Node2D/butterfly.position = get_global_mouse_position()
 	#Input.set_custom_mouse_cursor(arrow)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	# Set the click position to the player's current position
@@ -16,7 +16,7 @@ func _ready():
 	$Timer.start()
 
 func _physics_process(delta):
-	$Node2D/butterfly.position = get_global_mouse_position()
+	#$Node2D/butterfly.position = get_global_mouse_position()
 	
 	#mouse_position = get_global_mouse_position()
 	#print("SPEED: " , speed)

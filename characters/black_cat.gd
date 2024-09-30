@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var animations = ["stretch", "laying", "meow", "itch", "idle", "lick1"]
+var animations = ["stretch", "meow", "itch", "idle", "lick1"]
 # Timer variables
 var change_animation_timer = 0.0
 var time_between_animations = 0.0

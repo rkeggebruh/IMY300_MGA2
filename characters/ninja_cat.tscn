@@ -415,11 +415,13 @@ script = ExtResource("1_k60o0")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_p22s0")
-animation = &"roundKick"
+animation = &"uppercut"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.800001, 6.3)
 shape = SubResource("RectangleShape2D_dy3jj")
+
+[node name="fireballCat" type="AnimatedSprite2D" parent="."]
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=23 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -39,6 +39,8 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="Curve2D" id="Curve2D_cppbh"]
 
 [node name="home" type="Node2D"]
 script = ExtResource("1_1df4t")
@@ -246,6 +248,11 @@ texture = ExtResource("13_l7k4u")
 position = Vector2(813, 542)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("18_07ao3")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_cppbh")
+
+[node name="catPath" type="PathFollow2D" parent="Path2D"]
 
 [connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
 [connection signal="mouse_entered" from="pettingCat" to="." method="_on_petting_cat_mouse_entered"]

@@ -1,54 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://2evaflbv7eup"]
+[gd_scene load_steps=5 format=3 uid="uid://2evaflbv7eup"]
 
 [ext_resource type="Script" path="res://chase.gd" id="1_67qm0"]
-[ext_resource type="Texture2D" uid="uid://g7wuktammo36" path="res://assets/soap.png" id="2_ilesq"]
-[ext_resource type="Texture2D" uid="uid://8yoavuhfwc8i" path="res://assets/butterfly.png" id="3_1hkeh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mcuc6"]
-atlas = ExtResource("3_1hkeh")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ao1g8"]
-atlas = ExtResource("3_1hkeh")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mynib"]
-atlas = ExtResource("3_1hkeh")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_o781d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mcuc6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ao1g8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mynib")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://clrr7maa7r4bx" path="res://assets/49685498_9285857.jpg" id="2_kboa6"]
+[ext_resource type="Texture2D" uid="uid://bdtkiukyo8h2w" path="res://assets/butt.png" id="3_dd7xs"]
+[ext_resource type="PackedScene" uid="uid://dpnq6h87t2fl7" path="res://characters/black_cat.tscn" id="5_tti1v"]
 
 [node name="chase" type="CharacterBody2D"]
 script = ExtResource("1_67qm0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ilesq")
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(598, 150)
+scale = Vector2(0.741, 0.741)
+texture = ExtResource("2_kboa6")
+
+[node name="mouse" type="Sprite2D" parent="."]
+texture = ExtResource("3_dd7xs")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="butterfly" type="AnimatedSprite2D" parent="Node2D"]
-texture_filter = 1
-position = Vector2(573, 328)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_o781d")
-autoplay = "default"
+[node name="black cat" parent="." instance=ExtResource("5_tti1v")]
+position = Vector2(530, 542)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
