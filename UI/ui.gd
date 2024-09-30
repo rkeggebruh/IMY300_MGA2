@@ -20,4 +20,5 @@ func _on_cog_area_mouse_entered():
 func _on_cog_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_released("leftClick") and !State.menuShow:
 		State.menuShow = true
+		State.onPause = true
 		$pauseMenu.show()

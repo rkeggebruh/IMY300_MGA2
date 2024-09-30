@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://uu7k4517dbs4"]
+[gd_scene load_steps=63 format=3 uid="uid://uu7k4517dbs4"]
 
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="1_ancph"]
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_aof2v"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://8yoavuhfwc8i" path="res://assets/butterfly.png" id="8_8cx4p"]
 [ext_resource type="Script" path="res://scenes/butterflypath.gd" id="8_t2xpv"]
 [ext_resource type="AudioStream" uid="uid://b4d8mmcfeup8o" path="res://audio/clickShort.mp3" id="10_sflih"]
+[ext_resource type="AudioStream" uid="uid://d30e7egojrir8" path="res://audio/NOGYMX - bikes at the pier.mp3" id="11_wu8qe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_414dd"]
 bg_color = Color(0.223529, 0.643137, 0.952941, 1)
@@ -488,6 +489,11 @@ autoplay = "right"
 
 [node name="click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_sflih")
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_wu8qe")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

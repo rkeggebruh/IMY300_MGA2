@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=34 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -22,6 +22,15 @@
 [ext_resource type="Texture2D" uid="uid://c1om412lk7ytc" path="res://assets/Cat-2-Laying.png" id="20_m8up0"]
 [ext_resource type="AudioStream" uid="uid://bkg0mblk25fyx" path="res://audio/Cat Purring Sound Effect!.mp3" id="21_fivqh"]
 [ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="22_v8gqg"]
+[ext_resource type="Texture2D" uid="uid://djhp5cdlsoo22" path="res://assets/img.png" id="23_uqxhp"]
+[ext_resource type="Texture2D" uid="uid://dovmt2y5jc8v8" path="res://assets/summer5.png" id="24_i0fl2"]
+[ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="25_acs55"]
+[ext_resource type="Texture2D" uid="uid://brunjxg8je1ff" path="res://assets/punch (1).png" id="26_3w7iy"]
+[ext_resource type="Texture2D" uid="uid://cifi2fnnkasbw" path="res://assets/exportSign.png" id="27_gtkq0"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="28_day6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syyqi"]
+size = Vector2(750, 500)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kfw2"]
 bg_color = Color(0.988235, 0.858824, 0.905882, 1)
@@ -160,19 +169,83 @@ scale = Vector2(1.32813, 1.32813)
 texture = ExtResource("9_4wlpg")
 
 [node name="Picture" type="Sprite2D" parent="."]
-position = Vector2(833.563, 85.375)
-scale = Vector2(0.3, 0.3)
+position = Vector2(810, 133.688)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("11_lwkyl")
+
+[node name="Img" type="Sprite2D" parent="Picture"]
+position = Vector2(1.45825, 0.833313)
+scale = Vector2(1.10756, 1.06115)
+texture = ExtResource("23_uqxhp")
+
+[node name="hungerBtn" type="Area2D" parent="Picture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Picture/hungerBtn"]
+position = Vector2(0, 1.95313)
+shape = SubResource("RectangleShape2D_syyqi")
 
 [node name="Picture2" type="Sprite2D" parent="."]
-position = Vector2(833, 243)
-scale = Vector2(0.3, 0.3)
+position = Vector2(810, 220)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("11_lwkyl")
 
+[node name="Summer5" type="Sprite2D" parent="Picture2"]
+position = Vector2(-0.333496, -1.66675)
+scale = Vector2(0.301215, 0.342078)
+texture = ExtResource("24_i0fl2")
+
 [node name="Picture3" type="Sprite2D" parent="."]
-position = Vector2(833, 399)
-scale = Vector2(0.3, 0.3)
+position = Vector2(810, 306)
+scale = Vector2(0.16, 0.16)
 texture = ExtResource("11_lwkyl")
+
+[node name="LightOnWall-pixelicious(1)" type="Sprite2D" parent="Picture3"]
+position = Vector2(-0.000244141, 0.0517578)
+scale = Vector2(1.35417, 1.29002)
+texture = ExtResource("25_acs55")
+
+[node name="Light2" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)"]
+position = Vector2(-7.38477, -105.982)
+scale = Vector2(0.203077, 0.213175)
+texture = ExtResource("2_8yivh")
+
+[node name="Punch(1)" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)"]
+position = Vector2(155.077, -41.3832)
+scale = Vector2(0.319162, 0.335033)
+texture = ExtResource("26_3w7iy")
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)"]
+texture_filter = 1
+position = Vector2(-202.846, 147.245)
+rotation = 1.5708
+scale = Vector2(2.94687, 6.64087)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -31.8724)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor3" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(0, -15.9362)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor4" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -47.8086)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor5" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(0, -62.4258)
+scale = Vector2(1, 0.835127)
+texture = ExtResource("3_pub0e")
+flip_v = true
 
 [node name="Pixel-art-1653940255" type="Sprite2D" parent="."]
 position = Vector2(434, -246)
@@ -300,7 +373,40 @@ wait_time = 6.0
 stream = ExtResource("21_fivqh")
 
 [node name="UI" parent="." instance=ExtResource("22_v8gqg")]
+visible = false
 
+[node name="ExportSign" type="Sprite2D" parent="."]
+position = Vector2(983, 205)
+scale = Vector2(0.439941, 0.439941)
+texture = ExtResource("27_gtkq0")
+
+[node name="dex" type="Label" parent="."]
+offset_left = 914.0
+offset_top = 254.0
+offset_right = 1055.0
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(0.976471, 0.956863, 0.831373, 1)
+theme_override_fonts/font = ExtResource("28_day6o")
+theme_override_font_sizes/font_size = 35
+text = "Dexterity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hunger2" type="Label" parent="."]
+offset_left = 914.0
+offset_top = 153.0
+offset_right = 1055.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.976471, 0.956863, 0.831373, 1)
+theme_override_fonts/font = ExtResource("28_day6o")
+theme_override_font_sizes/font_size = 35
+text = "Hunger"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="input_event" from="Picture/hungerBtn" to="." method="_on_hunger_btn_input_event"]
+[connection signal="mouse_entered" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_exited"]
 [connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
 [connection signal="timeout" from="heart1Time" to="." method="_on_heart_1_time_timeout"]
 [connection signal="mouse_entered" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_entered"]

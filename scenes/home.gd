@@ -9,6 +9,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#if State.onPause:
+		#$heart1Time.stop()
 	pass
 
 
@@ -54,3 +56,16 @@ func _on_cat_sleep_timer_timeout():
 	$"Path2D/catPath/black cat".find_child("AnimatedSprite2D").play("getUp")
 	State.catSleeping = false
 	
+
+
+func _on_hunger_btn_mouse_entered():
+	$Picture/Img.modulate = Color(1, 0.847, 1)
+
+
+func _on_hunger_btn_mouse_exited():
+	$Picture/Img.modulate = Color(1, 1, 1)
+
+
+func _on_hunger_btn_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_released("leftClick"):
+		get_tree().change_scene_to_file("res://characters/choose_cat.tscn")

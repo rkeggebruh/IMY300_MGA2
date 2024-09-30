@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fqojp04081c1"]
+[gd_scene load_steps=10 format=3 uid="uid://fqojp04081c1"]
 
 [ext_resource type="PackedScene" uid="uid://bi4uue2ntjxvf" path="res://characters/ninja_cat.tscn" id="1_rlmqk"]
 [ext_resource type="Script" path="res://scenes/training.gd" id="1_x3m42"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d167xw32pronc" path="res://assets/woodenfloor.png" id="6_lf68d"]
 [ext_resource type="Texture2D" uid="uid://dbj20vnwcnlyh" path="res://assets/lightOnWall-pixelicious.png" id="7_j64lw"]
 [ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="8_qy2hp"]
+[ext_resource type="Texture2D" uid="uid://c40sj5s0denkl" path="res://assets/heart3.png" id="9_6pfv0"]
 
 [node name="training" type="Node2D"]
 script = ExtResource("1_x3m42")
@@ -224,6 +225,21 @@ wait_time = 3.0
 
 [node name="display" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Heart3" type="Sprite2D" parent="."]
+position = Vector2(591, 253)
+scale = Vector2(0.220833, 0.220833)
+texture = ExtResource("9_6pfv0")
+
+[node name="Heart4" type="Sprite2D" parent="."]
+position = Vector2(669, 253)
+scale = Vector2(0.220833, 0.220833)
+texture = ExtResource("9_6pfv0")
+
+[node name="Heart5" type="Sprite2D" parent="."]
+position = Vector2(746, 253)
+scale = Vector2(0.220833, 0.220833)
+texture = ExtResource("9_6pfv0")
 
 [connection signal="timeout" from="break" to="." method="_on_break_timeout"]
 [connection signal="timeout" from="display" to="." method="_on_display_timeout"]

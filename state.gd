@@ -6,6 +6,7 @@ var catOptThree = false
 var catSpeed = 0.08
 var catSleeping = false
 var menuShow = false
+var onPause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

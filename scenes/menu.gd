@@ -45,6 +45,7 @@ func _on_break_timer_timeout():
 
 
 func _on_start_pressed():
+	$bg.stop()
 	$click.play()
 	start = true
 	#get_tree().change_scene_to_file("res://scenes/home.tscn")
