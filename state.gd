@@ -3,6 +3,8 @@ extends Node
 var catOptOne = false
 var catOptTwo = false
 var catOptThree = false
+var catSpeed = 0.08
+var catSleeping = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

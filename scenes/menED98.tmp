@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://uu7k4517dbs4"]
+[gd_scene load_steps=38 format=3 uid="uid://uu7k4517dbs4"]
 
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="1_ancph"]
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_aof2v"]
@@ -7,26 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c6l3wmo5ilk1l" path="res://assets/Cat-2-Licking 1.png" id="4_4gegx"]
 [ext_resource type="Texture2D" uid="uid://dqkw2dsl60a0u" path="res://assets/Cat-2-Idle.png" id="5_ee1j5"]
 [ext_resource type="Texture2D" uid="uid://c1gcusdvymxcw" path="res://assets/MenuBg.png" id="6_ofu16"]
-[ext_resource type="Texture2D" uid="uid://8yoavuhfwc8i" path="res://assets/butterfly.png" id="8_8cx4p"]
-[ext_resource type="Script" path="res://scenes/butterflypath.gd" id="8_t2xpv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_414dd"]
-bg_color = Color(0.223529, 0.643137, 0.952941, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrmf7"]
-bg_color = Color(0.121569, 0.560784, 0.854902, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5vfu"]
-bg_color = Color(0.207843, 0.498039, 0.423529, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6o11k"]
-bg_color = Color(0.152941, 0.388235, 0.329412, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gb2wv"]
 bg_color = Color(0.843137, 0.286275, 0.388235, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngfr0"]
-bg_color = Color(0.666667, 0.188235, 0.282353, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oenlr"]
 atlas = ExtResource("2_mook5")
@@ -235,119 +218,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Curve2D" id="Curve2D_6q5jl"]
-_data = {
-"points": PackedVector2Array(-51.1843, 8.81945, 51.1843, -8.81945, 67, 57, -31.2542, -33.9028, 31.2542, 33.9028, 183, 122, -33.9028, -30.1947, 33.9028, 30.1947, 252, 276, -51.384, 20.6595, 51.384, -20.6595, 453, 334, 30.7013, 43.0486, -30.7013, -43.0486, 525, 159, 34.3721, -1.00113, -34.3721, 1.00113, 400, 102, 23.3082, -46.6164, -23.3082, 46.6164, 245, 192, -10.3181, -42.463, 10.3181, 42.463, 203, 315, -36.1134, -9.92126, 36.1134, 9.92126, 360, 469, -31.748, 17.4614, 31.748, -17.4614, 557, 462, 0, 0, 0, 0, 645, 381, -23.1508, 17.0474, 23.1508, -17.0474, 742, 300, 0, 0, 0, 0, 886, 253, -36.3118, -6.74646, 36.3118, 6.74646, 988, 243, 0, 0, 0, 0, 1076, 294, 1.47157, -34.1614, -1.47157, 34.1614, 1105, 363, 26.0139, -41.1763, -26.0139, 41.1763, 1046, 510, 0, 0, 0, 0, 893, 600, 22.1686, 19.0819, -22.1686, -19.0819, 636, 620, 0, 0, 0, 0, 681, 493, -3.06759, 36.3392, 3.06759, -36.3392, 766, 366, 15.0129, 9.68124, -15.0129, -9.68124, 732, 292, 0, 0, 0, 0, 657, 268, 0, 0, 0, 0, 495, 280, 0, 0, 0, 0, 357, 336, 30.9543, 7.937, -30.9543, -7.937, 219, 421, 0, 0, 0, 0, 140, 352, 0, 0, 0, 0, 98, 280, 7.1433, 19.0488, -7.1433, -19.0488, 44, 181, -4.7622, 25.0016, 4.7622, -25.0016, 41, 111, 0, 0, 0, 0, 67, 57)
-}
-point_count = 31
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d6ytb"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(0, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f36ta"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(16, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0d34e"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(32, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rbhe"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(0, 96, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ne0kd"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(16, 96, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wj24"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(32, 96, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7u3ha"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(0, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmfxx"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(16, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1tivr"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(32, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrpa1"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqml0"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yg16"]
-atlas = ExtResource("8_8cx4p")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ogwbd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d6ytb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f36ta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0d34e")
-}],
-"loop": true,
-"name": &"down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6rbhe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ne0kd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1wj24")
-}],
-"loop": true,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7u3ha")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmfxx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1tivr")
-}],
-"loop": true,
-"name": &"right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vrpa1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqml0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1yg16")
-}],
-"loop": true,
-"name": &"up",
-"speed": 5.0
-}]
-
 [node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -372,16 +242,12 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ancph")
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_414dd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yrmf7")
 text = "Start"
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ancph")
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_e5vfu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6o11k")
 text = "Options"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
@@ -389,7 +255,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ancph")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_gb2wv")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ngfr0")
 text = "Quit"
 
 [node name="walking" type="AnimatedSprite2D" parent="."]
@@ -400,7 +265,6 @@ sprite_frames = SubResource("SpriteFrames_ayb22")
 autoplay = "default"
 frame = 6
 frame_progress = 0.0134496
-metadata/_edit_lock_ = true
 
 [node name="itch" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -415,7 +279,6 @@ position = Vector2(388, 565)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_q2hnn")
 autoplay = "default"
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -434,10 +297,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -530.0
-offset_top = 361.0
-offset_right = 685.0
-offset_bottom = 619.0
+offset_left = -607.5
+offset_top = -186.0
+offset_right = 607.5
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.419608, 0.478431, 1)
@@ -448,7 +311,7 @@ MEOWCHI"
 horizontal_alignment = 1
 
 [node name="MenuBg" type="Sprite2D" parent="."]
-modulate = Color(0.733333, 0.733333, 0.733333, 1)
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
 z_index = -5
 position = Vector2(613, 284)
 scale = Vector2(0.804167, 0.804167)
@@ -456,46 +319,15 @@ texture = ExtResource("6_ofu16")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.08
+wait_time = 0.05
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-z_index = 5
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -555.5
-offset_top = -190.5
-offset_right = 585.5
-offset_bottom = 104.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 629.0
+offset_bottom = 149.0
 theme_override_fonts/normal_font = ExtResource("1_ancph")
-theme_override_font_sizes/normal_font_size = 180
-
-[node name="breakTimer" type="Timer" parent="."]
-wait_time = 4.0
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_6q5jl")
-
-[node name="butterflypath" type="PathFollow2D" parent="Path2D"]
-position = Vector2(67, 57)
-rotation = 0.510751
-rotates = false
-script = ExtResource("8_t2xpv")
-
-[node name="butterfly" type="AnimatedSprite2D" parent="Path2D/butterflypath"]
-z_index = -1
-texture_filter = 1
-position = Vector2(15.3268, 21.2153)
-rotation = -0.510751
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_ogwbd")
-animation = &"left"
-autoplay = "right"
+theme_override_font_sizes/normal_font_size = 50
+text = "The adventures of
+MEOWCHI"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]

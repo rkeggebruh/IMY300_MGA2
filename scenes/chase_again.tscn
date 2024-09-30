@@ -20,5 +20,4 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_yc1y5")
 script = ExtResource("3_urd5l")
 
-[node name="black cat" parent="." instance=ExtResource("4_60vai")]
-position = Vector2(662, 533)
+[node name="black cat chase" parent="." instance=ExtResource("4_60vai")]

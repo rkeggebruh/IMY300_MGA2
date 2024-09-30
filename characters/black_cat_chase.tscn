@@ -377,7 +377,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu2xj"]
 size = Vector2(20.6, 17.9)
 
-[node name="black cat" type="CharacterBody2D"]
+[node name="black cat chase" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 script = ExtResource("1_oq6p2")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=26 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://c40sj5s0denkl" path="res://assets/heart3.png" id="17_pa20h"]
 [ext_resource type="Script" path="res://scenes/catPath.gd" id="18_7amrb"]
 [ext_resource type="Texture2D" uid="uid://c1ioqyd1dpvw" path="res://assets/catbed.png" id="18_07ao3"]
+[ext_resource type="Texture2D" uid="uid://c1om412lk7ytc" path="res://assets/Cat-2-Laying.png" id="20_m8up0"]
+[ext_resource type="AudioStream" uid="uid://bkg0mblk25fyx" path="res://audio/Cat Purring Sound Effect!.mp3" id="21_fivqh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kfw2"]
 bg_color = Color(0.988235, 0.858824, 0.905882, 1)
@@ -43,9 +45,9 @@ corner_radius_bottom_left = 6
 
 [sub_resource type="Curve2D" id="Curve2D_cppbh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 549, 557, 0, 0, 0, 0, 388, 562, 0, 0, 0, 0, 305, 555, 0, 0, 0, 0, 297, 503, 0, 0, 0, 0, 386, 500, 0, 0, 0, 0, 470, 515, 0, 0, 0, 0, 579, 527, 0, 0, 0, 0, 660, 572, 0, 0, 0, 0, 817, 608, 0, 0, 0, 0, 865, 559, 0, 0, 0, 0, 817, 550, 0, 0, 0, 0, 734, 572, 0, 0, 0, 0, 660, 603, 0, 0, 0, 0, 583, 586, 0, 0, 0, 0, 551, 560)
+"points": PackedVector2Array(0, 0, 0, 0, 549, 557, 0, 0, 0, 0, 388, 562, 0, 0, 0, 0, 360, 518, 0, 0, 0, 0, 424, 520, 0, 0, 0, 0, 475, 526, 0, 0, 0, 0, 579, 527, 0, 0, 0, 0, 660, 572, 0, 0, 0, 0, 824, 491, 0, 0, 0, 0, 854, 534, 0, 0, 0, 0, 817, 594, 0, 0, 0, 0, 734, 572, 0, 0, 0, 0, 666, 588, 0, 0, 0, 0, 583, 586, 0, 0, 0, 0, 551, 560)
 }
-point_count = 15
+point_count = 14
 
 [node name="home" type="Node2D"]
 script = ExtResource("1_1df4t")
@@ -125,7 +127,7 @@ texture = ExtResource("3_pub0e")
 flip_v = true
 
 [node name="Plant" type="Sprite2D" parent="."]
-position = Vector2(1040, 478)
+position = Vector2(1051, 478)
 scale = Vector2(0.328125, 0.328125)
 texture = ExtResource("6_ogxvk")
 
@@ -136,12 +138,12 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_22nyl")
 
 [node name="Table2" type="Sprite2D" parent="."]
-position = Vector2(167, 511)
+position = Vector2(150, 511)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_malsa")
 
 [node name="Cup" type="Sprite2D" parent="."]
-position = Vector2(217, 405)
+position = Vector2(200, 405)
 scale = Vector2(0.212435, 0.212435)
 texture = ExtResource("10_uchps")
 
@@ -152,13 +154,23 @@ texture = ExtResource("7_cwi51")
 
 [node name="Plant3" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(117, 302)
+position = Vector2(100, 302)
 scale = Vector2(1.32813, 1.32813)
 texture = ExtResource("9_4wlpg")
 
 [node name="Picture" type="Sprite2D" parent="."]
-position = Vector2(900, 182)
-scale = Vector2(0.35, 0.35)
+position = Vector2(833.563, 85.375)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_lwkyl")
+
+[node name="Picture2" type="Sprite2D" parent="."]
+position = Vector2(833, 243)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_lwkyl")
+
+[node name="Picture3" type="Sprite2D" parent="."]
+position = Vector2(833, 399)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("11_lwkyl")
 
 [node name="Pixel-art-1653940255" type="Sprite2D" parent="."]
@@ -215,11 +227,6 @@ show_percentage = false
 wait_time = 5.0
 autostart = true
 
-[node name="pettingCat" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pettingCat"]
-polygon = PackedVector2Array(632, 468, 591, 508, 500, 515, 502, 600, 633, 597, 637, 530, 661, 504)
-
 [node name="heart1" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(582, 446)
@@ -246,8 +253,9 @@ texture = ExtResource("13_l7k4u")
 [node name="heart1Time" type="Timer" parent="."]
 
 [node name="Catbed" type="Sprite2D" parent="."]
-position = Vector2(813, 542)
-scale = Vector2(0.3, 0.3)
+modulate = Color(0.968627, 0.603922, 0.709804, 1)
+position = Vector2(811, 545)
+scale = Vector2(0.346939, 0.3)
 texture = ExtResource("18_07ao3")
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -264,7 +272,35 @@ position = Vector2(-3.46417, 14.8997)
 rotation = -3.11055
 scale = Vector2(10, 10)
 
+[node name="pettingCat" type="Area2D" parent="Path2D/catPath/black cat"]
+position = Vector2(-55.2, -54.2)
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/catPath/black cat/pettingCat"]
+polygon = PackedVector2Array(632, 468, 591, 508, 500, 515, 502, 600, 633, 597, 637, 530, 661, 504)
+
+[node name="Cat-2-laying" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-449, 476)
+scale = Vector2(10, 10)
+texture = ExtResource("20_m8up0")
+
+[node name="inCatBed" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="inCatBed"]
+position = Vector2(-14, -33)
+polygon = PackedVector2Array(940, 543, 921, 587, 965, 604, 990, 561)
+
+[node name="catSleepTimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="purring" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_fivqh")
+
 [connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
-[connection signal="mouse_entered" from="pettingCat" to="." method="_on_petting_cat_mouse_entered"]
-[connection signal="mouse_exited" from="pettingCat" to="." method="_on_petting_cat_mouse_exited"]
 [connection signal="timeout" from="heart1Time" to="." method="_on_heart_1_time_timeout"]
+[connection signal="mouse_entered" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_exited"]
+[connection signal="body_entered" from="inCatBed" to="." method="_on_in_cat_bed_body_entered"]
+[connection signal="timeout" from="catSleepTimer" to="." method="_on_cat_sleep_timer_timeout"]
