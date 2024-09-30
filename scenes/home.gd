@@ -68,4 +68,17 @@ func _on_hunger_btn_mouse_exited():
 
 func _on_hunger_btn_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_released("leftClick"):
+		get_tree().change_scene_to_file("res://scenes/chase_again.tscn")
+
+
+func _on_dexterity_btn_mouse_entered():
+	$"Picture3/LightOnWall-pixelicious(1)".modulate = Color(1, 0.847, 1)
+
+
+func _on_dexterity_btn_mouse_exited():
+	$"Picture3/LightOnWall-pixelicious(1)".modulate = Color(1, 1, 1)
+
+
+func _on_dexterity_btn_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_released("leftClick"):
 		get_tree().change_scene_to_file("res://characters/choose_cat.tscn")

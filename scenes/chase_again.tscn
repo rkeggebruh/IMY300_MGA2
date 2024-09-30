@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://hsx6ueb7tbij"]
+[gd_scene load_steps=7 format=3 uid="uid://hsx6ueb7tbij"]
 
 [ext_resource type="Texture2D" uid="uid://clrr7maa7r4bx" path="res://assets/49685498_9285857.jpg" id="1_5fdoc"]
 [ext_resource type="Script" path="res://scenes/chase_again.gd" id="1_wq7ei"]
 [ext_resource type="Texture2D" uid="uid://buil7jc4yob4v" path="res://assets/cropedButterfly.png" id="2_yc1y5"]
 [ext_resource type="Script" path="res://scenes/mouse.gd" id="3_urd5l"]
 [ext_resource type="PackedScene" uid="uid://ct4phfmr7fpke" path="res://characters/black_cat_chase.tscn" id="4_60vai"]
+[ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="6_21q87"]
 
 [node name="chaseAgain" type="Node2D"]
 script = ExtResource("1_wq7ei")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(598, 150)
-scale = Vector2(0.741, 0.741)
+position = Vector2(483, 193)
+scale = Vector2(0.4605, 0.4605)
 texture = ExtResource("1_5fdoc")
 
 [node name="mouse" type="Sprite2D" parent="."]
@@ -21,3 +22,6 @@ texture = ExtResource("2_yc1y5")
 script = ExtResource("3_urd5l")
 
 [node name="black cat chase" parent="." instance=ExtResource("4_60vai")]
+position = Vector2(467, 467)
+
+[node name="UI" parent="." instance=ExtResource("6_21q87")]

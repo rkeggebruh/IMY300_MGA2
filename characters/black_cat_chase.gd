@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var speed = 200  # Adjust the speed as needed
 var speed_increment = 0.06
-var min_scale = 1.0  # Minimum scale when at the top of the screen
-var max_scale = 2.0  # Maximum scale when at the bottom of the screen
+var min_scale = 0.4  # Minimum scale when at the top of the screen
+var max_scale = 3.0  # Maximum scale when at the bottom of the screen
 
 
 func _ready():
@@ -37,6 +37,7 @@ func _process(delta):
 	move_and_slide()
 
 func _on_cat_chase_area_mouse_entered():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	print("game over for real")
 	$Timer.stop()
 	speed = 0

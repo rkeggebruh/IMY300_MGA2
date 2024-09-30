@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=35 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -30,6 +30,9 @@
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="28_day6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syyqi"]
+size = Vector2(750, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6etan"]
 size = Vector2(750, 500)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kfw2"]
@@ -247,6 +250,12 @@ scale = Vector2(1, 0.835127)
 texture = ExtResource("3_pub0e")
 flip_v = true
 
+[node name="dexterityBtn" type="Area2D" parent="Picture3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Picture3/dexterityBtn"]
+position = Vector2(0, -0.000244141)
+shape = SubResource("RectangleShape2D_6etan")
+
 [node name="Pixel-art-1653940255" type="Sprite2D" parent="."]
 position = Vector2(434, -246)
 scale = Vector2(0.428977, 0.428977)
@@ -407,6 +416,9 @@ vertical_alignment = 1
 [connection signal="input_event" from="Picture/hungerBtn" to="." method="_on_hunger_btn_input_event"]
 [connection signal="mouse_entered" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_exited"]
+[connection signal="input_event" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_input_event"]
+[connection signal="mouse_entered" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_exited"]
 [connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
 [connection signal="timeout" from="heart1Time" to="." method="_on_heart_1_time_timeout"]
 [connection signal="mouse_entered" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_entered"]

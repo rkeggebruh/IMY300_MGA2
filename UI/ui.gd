@@ -4,6 +4,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$pauseMenu.hide()
 
 
@@ -19,6 +20,7 @@ func _on_cog_area_mouse_entered():
 
 func _on_cog_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_released("leftClick") and !State.menuShow:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		State.menuShow = true
 		State.onPause = true
 		$pauseMenu.show()
