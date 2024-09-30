@@ -9,14 +9,13 @@ var label_display_order = []
 var label_to_action = []
 var current_label_index = 0
 
-
-
 var rng = RandomNumberGenerator.new()
 
 var current_action:String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$ninjaCat/sprite.play("idle")
 	$labelKick.hide()
 	$labelUppercut.hide()
@@ -105,28 +104,58 @@ func _process(delta):
 	
 	
 	if count == 5:
-		$ninjaCat/sprite.play("kick")
+		if State.catOptOne:
+			$ninjaCat/fireballCat.play("fireKick")
+		elif State.catOptTwo:
+			$ninjaCat/ak47.play("flipKick")
+		elif State.catOptThree:
+			$ninjaCat/sprite.play("kick")
+		
 		$plusPoint.show()
 		count = 0
 	
 	if countUP == 3:
-		$ninjaCat/sprite.play("uppercut")
+		if State.catOptOne:
+			$ninjaCat/fireballCat.play("fireballHorizontalUp")
+		elif State.catOptTwo:
+			$ninjaCat/ak47.play("jumpShoot")
+		elif State.catOptThree:
+			$ninjaCat/sprite.play("uppercut")
+		#$ninjaCat/sprite.play("uppercut")
 		$plusPoint.show()
 		countUP = 0
 	
 	if countKF == 4:
-		$ninjaCat/sprite.play("flipKick")
+		if State.catOptOne:
+			$ninjaCat/fireballCat.play("firePunch2")
+		elif State.catOptTwo:
+			$ninjaCat/ak47.play("playDead")
+		elif State.catOptThree:
+			$ninjaCat/sprite.play("flipKick")
+		#$ninjaCat/sprite.play("flipKick")
 		$plusPoint.show()
 		countKF = 0
 	
 	if countLeft == 2:
-		$ninjaCat/sprite.play("punch")
+		if State.catOptOne:
+			$ninjaCat/fireballCat.play("fireSpin")
+		elif State.catOptTwo:
+			$ninjaCat/ak47.play("shoot")
+		elif State.catOptThree:
+			$ninjaCat/sprite.play("punch")
+		#$ninjaCat/sprite.play("punch")
 		$plusPoint.show()
 		countLeft = 0
 	
 	if countRight == 6:
-		print("PLAYING IN THE RIGHT")
-		$ninjaCat/sprite.play("roundKick")
+		if State.catOptOne:
+			$ninjaCat/fireballCat.play("handMove")
+		elif State.catOptTwo:
+			$ninjaCat/ak47.play("flipKick")
+		elif State.catOptThree:
+			$ninjaCat/sprite.play("roundKick")
+		#print("PLAYING IN THE RIGHT")
+		#$ninjaCat/sprite.play("roundKick")
 		$plusPoint.show()
 		countRight = 0
 

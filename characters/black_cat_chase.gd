@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-var speed = 100  # Adjust the speed as needed
-var speed_increment = 0.05
+var speed = 200  # Adjust the speed as needed
+var speed_increment = 0.06
 var min_scale = 1.0  # Minimum scale when at the top of the screen
 var max_scale = 2.0  # Maximum scale when at the bottom of the screen
+
 
 func _ready():
 	$Timer.start()

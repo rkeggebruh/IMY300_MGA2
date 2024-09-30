@@ -195,22 +195,6 @@ position = Vector2(1900, 313)
 scale = Vector2(2.45898, 2.43622)
 texture = ExtResource("6_osj85")
 
-[node name="welcom" type="Label" parent="."]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 472.0
-offset_top = 164.0
-offset_right = 1050.0
-offset_bottom = 273.0
-grow_vertical = 0
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
-theme_override_fonts/font = ExtResource("7_engqs")
-theme_override_font_sizes/font_size = 60
-text = "WELCOME TO YOUR TRAINING..."
-metadata/_edit_use_anchors_ = true
-
 [node name="down" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(243, 302)
@@ -245,6 +229,33 @@ position = Vector2(383, 197)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_pas24")
 autoplay = "default"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -25.0
+offset_top = -32.0
+offset_right = 1216.0
+offset_bottom = 687.0
+color = Color(0.0588235, 0.345098, 0.584314, 1)
+
+[node name="welcom" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.113618
+anchor_top = 1.14882
+anchor_right = -0.113618
+anchor_bottom = 1.14882
+offset_left = 497.0
+offset_top = -523.0
+offset_right = 1075.0
+offset_bottom = -414.0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("7_engqs")
+theme_override_font_sizes/font_size = 60
+text = "WELCOME TO YOUR TRAINING..."
+metadata/_edit_use_anchors_ = true
 
 [connection signal="animation_finished" from="down" to="." method="_on_down_animation_finished"]
 [connection signal="animation_finished" from="space" to="." method="_on_space_animation_finished"]
