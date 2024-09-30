@@ -1181,7 +1181,7 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_8w184")
 animation = &"outline"
 autoplay = "default"
-frame_progress = 0.338445
+frame_progress = 0.116187
 
 [node name="Label3" type="Label" parent="catThree"]
 offset_left = -88.0001

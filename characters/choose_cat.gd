@@ -3,6 +3,7 @@ extends Node2D
 var InsOne = false
 var InsTwo = false
 var InsThree = false
+var InsFour = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +33,12 @@ func _process(delta):
 		$sensei2.show()
 	elif Input.is_action_just_released("ui_accept") and InsThree:
 		InsThree = false
+		InsFour = true
 		$sensei2.hide()
+		$sensei3.show()
+	elif Input.is_action_just_released("ui_accept") and InsFour:
+		InsFour = false
+		$sensei3.hide()
 		$catOne.show()
 		$catTwo.show()
 		$catThree.show()
