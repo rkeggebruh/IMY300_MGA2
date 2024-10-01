@@ -1,0 +1,437 @@
+[gd_scene load_steps=36 format=3 uid="uid://chiy7402jppk"]
+
+[ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
+[ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
+[ext_resource type="Texture2D" uid="uid://dnf8fn0wkgpr" path="res://assets/light.png" id="2_8yivh"]
+[ext_resource type="Texture2D" uid="uid://d167xw32pronc" path="res://assets/woodenfloor.png" id="3_pub0e"]
+[ext_resource type="PackedScene" uid="uid://dpnq6h87t2fl7" path="res://characters/black_cat.tscn" id="4_orxwe"]
+[ext_resource type="Texture2D" uid="uid://dv1gpqy1ivnws" path="res://assets/plant.png" id="6_ogxvk"]
+[ext_resource type="Texture2D" uid="uid://c2w6p0fgoyu22" path="res://assets/table.png" id="7_22nyl"]
+[ext_resource type="Texture2D" uid="uid://cuxax1j7wb6ov" path="res://assets/plat2.png" id="7_cwi51"]
+[ext_resource type="Texture2D" uid="uid://dh1f1vb3yawwu" path="res://assets/plant3.png" id="9_4wlpg"]
+[ext_resource type="Texture2D" uid="uid://g1v3b0isgc4g" path="res://assets/table2.png" id="9_malsa"]
+[ext_resource type="Texture2D" uid="uid://bw6u31bd7xqp8" path="res://assets/cup.png" id="10_uchps"]
+[ext_resource type="Texture2D" uid="uid://d1lsla5yufg7t" path="res://assets/picture.png" id="11_lwkyl"]
+[ext_resource type="Texture2D" uid="uid://2rjhx7gedxj6" path="res://assets/pixel-art-1653940255.png" id="12_81giv"]
+[ext_resource type="Texture2D" uid="uid://g7wuktammo36" path="res://assets/soap.png" id="13_l7k4u"]
+[ext_resource type="Texture2D" uid="uid://bx3w2fy5fwu5" path="res://assets/health.png" id="14_eypy6"]
+[ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="15_yhoo6"]
+[ext_resource type="Texture2D" uid="uid://c40sj5s0denkl" path="res://assets/heart3.png" id="17_pa20h"]
+[ext_resource type="Script" path="res://scenes/catPath.gd" id="18_7amrb"]
+[ext_resource type="Texture2D" uid="uid://c1ioqyd1dpvw" path="res://assets/catbed.png" id="18_07ao3"]
+[ext_resource type="Texture2D" uid="uid://c1om412lk7ytc" path="res://assets/Cat-2-Laying.png" id="20_m8up0"]
+[ext_resource type="AudioStream" uid="uid://bkg0mblk25fyx" path="res://audio/Cat Purring Sound Effect!.mp3" id="21_fivqh"]
+[ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="22_v8gqg"]
+[ext_resource type="Texture2D" uid="uid://djhp5cdlsoo22" path="res://assets/img.png" id="23_uqxhp"]
+[ext_resource type="Texture2D" uid="uid://dovmt2y5jc8v8" path="res://assets/summer5.png" id="24_i0fl2"]
+[ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="25_acs55"]
+[ext_resource type="Texture2D" uid="uid://brunjxg8je1ff" path="res://assets/punch (1).png" id="26_3w7iy"]
+[ext_resource type="Texture2D" uid="uid://cifi2fnnkasbw" path="res://assets/exportSign.png" id="27_gtkq0"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="28_day6o"]
+[ext_resource type="AudioStream" uid="uid://dvyr0e36a10vs" path="res://assets/holdOnCut.mp3" id="29_r0nm5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syyqi"]
+size = Vector2(750, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6etan"]
+size = Vector2(750, 500)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kfw2"]
+bg_color = Color(0.988235, 0.858824, 0.905882, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cle78"]
+bg_color = Color(0.6, 1, 0.784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ned1c"]
+bg_color = Color(0.305882, 0.890196, 0.803922, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Curve2D" id="Curve2D_cppbh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 549, 557, 0, 0, 0, 0, 388, 562, 0, 0, 0, 0, 360, 518, 0, 0, 0, 0, 424, 520, 0, 0, 0, 0, 475, 526, 0, 0, 0, 0, 579, 527, 0, 0, 0, 0, 660, 572, 0, 0, 0, 0, 824, 491, 0, 0, 0, 0, 854, 534, 0, 0, 0, 0, 817, 594, 0, 0, 0, 0, 734, 572, 0, 0, 0, 0, 666, 588, 0, 0, 0, 0, 583, 586, 0, 0, 0, 0, 551, 560)
+}
+point_count = 14
+
+[node name="home" type="Node2D"]
+script = ExtResource("1_1df4t")
+
+[node name="Turw-pixelicious(1)" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(482, 589)
+scale = Vector2(3.08008, 3.08543)
+texture = ExtResource("1_r1qvv")
+
+[node name="Light" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(560, 91)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_8yivh")
+
+[node name="Woodenfloor" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(41.0001, 597.666)
+rotation = 1.5708
+scale = Vector2(6.35026, 7.96928)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -31.8724)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor3" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -15.9362)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor4" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -47.8086)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor5" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -63.7448)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor6" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(-1.52588e-05, -79.681)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor7" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -95.6172)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor8" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -111.553)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor9" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(-1.52588e-05, -127.49)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor10" type="Sprite2D" parent="Woodenfloor"]
+texture_filter = 1
+position = Vector2(0, -143.426)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Plant" type="Sprite2D" parent="."]
+position = Vector2(1051, 478)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("6_ogxvk")
+
+[node name="Table" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-196, 335)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_22nyl")
+
+[node name="Table2" type="Sprite2D" parent="."]
+position = Vector2(150, 511)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_malsa")
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(200, 405)
+scale = Vector2(0.212435, 0.212435)
+texture = ExtResource("10_uchps")
+
+[node name="Plat2" type="Sprite2D" parent="."]
+position = Vector2(-213, 485)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("7_cwi51")
+
+[node name="Plant3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(100, 302)
+scale = Vector2(1.32813, 1.32813)
+texture = ExtResource("9_4wlpg")
+
+[node name="Picture" type="Sprite2D" parent="."]
+position = Vector2(810, 133.688)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("11_lwkyl")
+
+[node name="Img" type="Sprite2D" parent="Picture"]
+position = Vector2(1.45825, 0.833313)
+scale = Vector2(1.10756, 1.06115)
+texture = ExtResource("23_uqxhp")
+
+[node name="hungerBtn" type="Area2D" parent="Picture"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Picture/hungerBtn"]
+position = Vector2(0, 1.95313)
+shape = SubResource("RectangleShape2D_syyqi")
+
+[node name="Picture2" type="Sprite2D" parent="."]
+position = Vector2(810, 220)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("11_lwkyl")
+
+[node name="Summer5" type="Sprite2D" parent="Picture2"]
+position = Vector2(-0.333496, -1.66675)
+scale = Vector2(0.301215, 0.342078)
+texture = ExtResource("24_i0fl2")
+
+[node name="Picture3" type="Sprite2D" parent="."]
+position = Vector2(810, 306)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("11_lwkyl")
+
+[node name="LightOnWall-pixelicious(1)" type="Sprite2D" parent="Picture3"]
+position = Vector2(-0.000244141, 0.0517578)
+scale = Vector2(1.35417, 1.29002)
+texture = ExtResource("25_acs55")
+
+[node name="Light2" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)"]
+position = Vector2(-7.38477, -105.982)
+scale = Vector2(0.203077, 0.213175)
+texture = ExtResource("2_8yivh")
+
+[node name="Punch(1)" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)"]
+position = Vector2(155.077, -41.3832)
+scale = Vector2(0.319162, 0.335033)
+texture = ExtResource("26_3w7iy")
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)"]
+texture_filter = 1
+position = Vector2(-202.846, 147.245)
+rotation = 1.5708
+scale = Vector2(2.94687, 6.64087)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor2" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -31.8724)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor3" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(0, -15.9362)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor4" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(1.52588e-05, -47.8086)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="Woodenfloor5" type="Sprite2D" parent="Picture3/LightOnWall-pixelicious(1)/Woodenfloor2"]
+texture_filter = 1
+position = Vector2(0, -62.4258)
+scale = Vector2(1, 0.835127)
+texture = ExtResource("3_pub0e")
+flip_v = true
+
+[node name="dexterityBtn" type="Area2D" parent="Picture3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Picture3/dexterityBtn"]
+position = Vector2(0, -0.000244141)
+shape = SubResource("RectangleShape2D_6etan")
+
+[node name="Pixel-art-1653940255" type="Sprite2D" parent="."]
+position = Vector2(434, -246)
+scale = Vector2(0.428977, 0.428977)
+texture = ExtResource("12_81giv")
+
+[node name="Health" type="Sprite2D" parent="."]
+position = Vector2(220, -215)
+scale = Vector2(0.289286, 0.289286)
+texture = ExtResource("14_eypy6")
+
+[node name="Health2" type="Sprite2D" parent="."]
+position = Vector2(86.0625, -302.5)
+scale = Vector2(0.289286, 0.289286)
+texture = ExtResource("14_eypy6")
+
+[node name="Health3" type="Sprite2D" parent="."]
+position = Vector2(86.0625, -255.5)
+scale = Vector2(0.289286, 0.289286)
+texture = ExtResource("14_eypy6")
+
+[node name="love" type="ProgressBar" parent="."]
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 307.0
+offset_bottom = 57.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_1kfw2")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="hunger" type="ProgressBar" parent="."]
+offset_left = 52.0
+offset_top = 73.0
+offset_right = 307.0
+offset_bottom = 100.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_cle78")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="clean" type="ProgressBar" parent="."]
+offset_left = 58.0
+offset_top = 115.0
+offset_right = 307.0
+offset_bottom = 142.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ned1c")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="deplete" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="heart1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(582, 446)
+scale = Vector2(0.134722, 0.134722)
+texture = ExtResource("17_pa20h")
+
+[node name="heart2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(53, 40)
+scale = Vector2(0.134722, 0.134722)
+texture = ExtResource("17_pa20h")
+
+[node name="CatFood" type="Sprite2D" parent="."]
+position = Vector2(55, 85)
+scale = Vector2(0.0548499, 0.0509824)
+texture = ExtResource("15_yhoo6")
+
+[node name="Soap" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(58, 127)
+scale = Vector2(0.289167, 0.289167)
+texture = ExtResource("13_l7k4u")
+
+[node name="heart1Time" type="Timer" parent="."]
+
+[node name="Catbed" type="Sprite2D" parent="."]
+modulate = Color(0.968627, 0.603922, 0.709804, 1)
+position = Vector2(811, 545)
+scale = Vector2(0.346939, 0.3)
+texture = ExtResource("18_07ao3")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_cppbh")
+
+[node name="catPath" type="PathFollow2D" parent="Path2D"]
+position = Vector2(549, 557)
+rotation = 3.11055
+rotates = false
+script = ExtResource("18_7amrb")
+
+[node name="black cat" parent="Path2D/catPath" instance=ExtResource("4_orxwe")]
+position = Vector2(-3.46417, 14.8997)
+rotation = -3.11055
+scale = Vector2(10, 10)
+
+[node name="pettingCat" type="Area2D" parent="Path2D/catPath/black cat"]
+position = Vector2(-55.2, -54.2)
+scale = Vector2(0.1, 0.1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/catPath/black cat/pettingCat"]
+polygon = PackedVector2Array(632, 468, 591, 508, 500, 515, 502, 600, 633, 597, 637, 530, 661, 504)
+
+[node name="Cat-2-laying" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-449, 476)
+scale = Vector2(10, 10)
+texture = ExtResource("20_m8up0")
+
+[node name="inCatBed" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="inCatBed"]
+position = Vector2(-14, -33)
+polygon = PackedVector2Array(940, 543, 921, 587, 965, 604, 990, 561)
+
+[node name="catSleepTimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="purring" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_fivqh")
+
+[node name="UI" parent="." instance=ExtResource("22_v8gqg")]
+
+[node name="ExportSign" type="Sprite2D" parent="."]
+position = Vector2(983, 205)
+scale = Vector2(0.439941, 0.439941)
+texture = ExtResource("27_gtkq0")
+
+[node name="dex" type="Label" parent="."]
+offset_left = 914.0
+offset_top = 254.0
+offset_right = 1055.0
+offset_bottom = 292.0
+theme_override_colors/font_color = Color(0.976471, 0.956863, 0.831373, 1)
+theme_override_fonts/font = ExtResource("28_day6o")
+theme_override_font_sizes/font_size = 35
+text = "Dexterity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hunger2" type="Label" parent="."]
+offset_left = 914.0
+offset_top = 153.0
+offset_right = 1055.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0.976471, 0.956863, 0.831373, 1)
+theme_override_fonts/font = ExtResource("28_day6o")
+theme_override_font_sizes/font_size = 35
+text = "Hunger"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_r0nm5")
+volume_db = -10.0
+autoplay = true
+
+[node name="getBiggerTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="input_event" from="Picture/hungerBtn" to="." method="_on_hunger_btn_input_event"]
+[connection signal="mouse_entered" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_exited"]
+[connection signal="input_event" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_input_event"]
+[connection signal="mouse_entered" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_exited"]
+[connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
+[connection signal="timeout" from="heart1Time" to="." method="_on_heart_1_time_timeout"]
+[connection signal="mouse_entered" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_entered"]
+[connection signal="mouse_exited" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_exited"]
+[connection signal="body_entered" from="inCatBed" to="." method="_on_in_cat_bed_body_entered"]
+[connection signal="timeout" from="catSleepTimer" to="." method="_on_cat_sleep_timer_timeout"]
+[connection signal="timeout" from="getBiggerTimer" to="." method="_on_get_bigger_timer_timeout"]

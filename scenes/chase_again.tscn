@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hsx6ueb7tbij"]
+[gd_scene load_steps=24 format=3 uid="uid://hsx6ueb7tbij"]
 
 [ext_resource type="Texture2D" uid="uid://clrr7maa7r4bx" path="res://assets/49685498_9285857.jpg" id="1_5fdoc"]
 [ext_resource type="Script" path="res://scenes/chase_again.gd" id="1_wq7ei"]
@@ -6,6 +6,90 @@
 [ext_resource type="Script" path="res://scenes/mouse.gd" id="3_urd5l"]
 [ext_resource type="PackedScene" uid="uid://ct4phfmr7fpke" path="res://characters/black_cat_chase.tscn" id="4_60vai"]
 [ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="6_21q87"]
+[ext_resource type="Texture2D" uid="uid://dhexc7nwpw26w" path="res://assets/Cat-2-Walk.png" id="7_hm801"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="9_0qwex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jveo7"]
+atlas = ExtResource("7_hm801")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqy64"]
+atlas = ExtResource("7_hm801")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv0yw"]
+atlas = ExtResource("7_hm801")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wv5y"]
+atlas = ExtResource("7_hm801")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yul"]
+atlas = ExtResource("7_hm801")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faoof"]
+atlas = ExtResource("7_hm801")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxan2"]
+atlas = ExtResource("7_hm801")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01uqp"]
+atlas = ExtResource("7_hm801")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vppk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jveo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqy64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv0yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wv5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3yul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faoof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxan2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01uqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muixo"]
+bg_color = Color(0.384314, 0.643137, 0.737255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vj35c"]
+bg_color = Color(0.298039, 0.533333, 0.619608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmcse"]
+bg_color = Color(0.152941, 0.305882, 0.360784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28n18"]
+bg_color = Color(0.886275, 0.462745, 0.352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojgfy"]
+bg_color = Color(0.772549, 0.352941, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thfva"]
+bg_color = Color(0.580392, 0.247059, 0.156863, 1)
 
 [node name="chaseAgain" type="Node2D"]
 script = ExtResource("1_wq7ei")
@@ -22,6 +106,89 @@ texture = ExtResource("2_yc1y5")
 script = ExtResource("3_urd5l")
 
 [node name="black cat chase" parent="." instance=ExtResource("4_60vai")]
-position = Vector2(467, 467)
+position = Vector2(45, 165)
 
 [node name="UI" parent="." instance=ExtResource("6_21q87")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 2
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 1175.0
+offset_bottom = 661.0
+color = Color(0.952941, 0.572549, 0.376471, 0.662745)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+texture_filter = 1
+position = Vector2(599, 411)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_8vppk")
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.5
+offset_top = -157.5
+offset_right = 575.5
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("9_0qwex")
+theme_override_font_sizes/normal_font_size = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.5
+offset_top = -202.0
+offset_right = 216.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="again" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_0qwex")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_muixo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vj35c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tmcse")
+text = "Play again"
+
+[node name="back" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_0qwex")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_28n18")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ojgfy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_thfva")
+text = "Go back to napping"
+
+[node name="breakTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="letterTimer" type="Timer" parent="."]
+wait_time = 0.08
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 1252.0
+offset_top = 200.0
+offset_right = 1449.0
+offset_bottom = 288.0
+color = Color(0.0666667, 0.501961, 0.803922, 1)
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/again" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]
+[connection signal="timeout" from="letterTimer" to="." method="_on_letter_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjiqfbslxan7n"]
+
+[ext_resource type="AudioStream" uid="uid://d28864jybvffu" path="res://audio/Still DRE.mp3" id="1_q5v0k"]
+
+[node name="trainingSound" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_q5v0k")
+volume_db = -20.0

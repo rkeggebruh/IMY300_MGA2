@@ -7,6 +7,10 @@ var catSpeed = 0.08
 var catSleeping = false
 var menuShow = false
 var onPause = false
+var caught = false
+var catScale = 1
+var scaleUpdate = false
+var HomeinstructionsDone = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

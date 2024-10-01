@@ -38,10 +38,11 @@ func _process(delta):
 
 func _on_cat_chase_area_mouse_entered():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	State.caught = true
 	print("game over for real")
 	$Timer.stop()
 	speed = 0
-	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("sit")
 
 func _on_timer_timeout():
 	speed *= (1.3 + speed_increment)

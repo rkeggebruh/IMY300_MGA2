@@ -2,16 +2,89 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 var count = 0
+var insOne = true
+var insTwo = false
+var insThree = false
+var insFour = false
+var insFinal = false
+
+#var newCount = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	TrainingSound.find_child("AudioStreamPlayer").stop()
 	$heart1.hide()
+	$ColorRect/arr1.hide()
+	$ColorRect/arr2.hide()
+	$ColorRect/arr3.hide()
+	$ColorRect/Arrow.hide()
+	$ColorRect/Arrow2.hide()
+	$ColorRect/Arrow3.hide()
+	$ColorRect/arrowMid.hide()
+	$ColorRect/arrowUp.hide()
+	$ColorRect/arrowDown.hide()
+	$ColorRect/threeArrs2.hide()
+	
+	if !State.HomeinstructionsDone:
+		$ColorRect.show()
+	if State.HomeinstructionsDone:
+		$deplete.start()
+		$getBiggerTimer.start()
+		$ColorRect.hide()
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#if State.onPause:
-		#$heart1Time.stop()
-	pass
+	if State.scaleUpdate:
+		$"Path2D/catPath/black cat".scale.x += State.catScale
+		$"Path2D/catPath/black cat".scale.y += State.catScale
+		State.scaleUpdate = false
+		#$"Path2D/catPath/black cat".scale *= State.catScale
+	
+	if !State.HomeinstructionsDone:
+		if Input.is_action_just_released("ui_accept") and insOne:
+			print("first ins")
+			insTwo = true
+			insOne = false
+			$ColorRect/arr1.show()
+			$ColorRect/Arrow.show()
+			$ColorRect/Arrow/AnimationPlayer.play("arrow")
+			#pass
+		elif Input.is_action_just_released("ui_accept") and insTwo:
+			insTwo = false
+			insThree = true
+			$ColorRect/arr1.hide()
+			$ColorRect/Arrow.hide()
+			$ColorRect/Arrow2.show()
+			$ColorRect/arr2.show()
+			$ColorRect/Arrow2/AnimationPlayer.play("arrow")
+		elif Input.is_action_just_released("ui_accept") and insThree:
+			insFour = true
+			insThree = false
+			$ColorRect/Arrow2.hide()
+			$ColorRect/arr2.hide()
+			$ColorRect/arr3.show()
+			$ColorRect/Arrow3.show()
+			$ColorRect/Arrow3/AnimationPlayer.play("arrow")
+		elif Input.is_action_just_released("ui_accept") and insFour:
+			insFour = false
+			insFinal = true
+			$ColorRect/arr3.hide()
+			$ColorRect/Arrow3.hide()
+			$ColorRect/arr3.hide()
+			$ColorRect/Arrow3.hide()
+			$ColorRect/threeArrs2.show()
+			$ColorRect/threeArrs.play("arrow")
+			$ColorRect/arrowMid.show()
+			$ColorRect/arrowUp.show()
+			$ColorRect/arrowDown.show()
+			$ColorRect/threeArrs2.show()
+		elif Input.is_action_just_released("ui_accept") and insFinal:
+			$ColorRect.hide()
+			$deplete.start()
+			$getBiggerTimer.start()
+			State.HomeinstructionsDone = true
 
 
 func _on_deplete_timeout():
@@ -68,6 +141,7 @@ func _on_hunger_btn_mouse_exited():
 
 func _on_hunger_btn_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_released("leftClick"):
+		ClickSound.find_child("AudioStreamPlayer").play()
 		get_tree().change_scene_to_file("res://scenes/chase_again.tscn")
 
 
@@ -81,4 +155,15 @@ func _on_dexterity_btn_mouse_exited():
 
 func _on_dexterity_btn_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_released("leftClick"):
+		ClickSound.find_child("AudioStreamPlayer").play()
 		get_tree().change_scene_to_file("res://characters/choose_cat.tscn")
+
+
+func _on_get_bigger_timer_timeout():
+	#$"Path2D/catPath/black cat".scale.x += 1
+	#$"Path2D/catPath/black cat".scale.y += 1
+	#var scale_factor = 1.1  # Increase size by 20% each time
+	State.scaleUpdate = true
+	#$"Path2D/catPath/black cat".scale *= scale_factor
+	State.catScale += 1
+

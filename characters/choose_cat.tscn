@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://1i3i2cr1k5fw"]
+[gd_scene load_steps=152 format=3 uid="uid://1i3i2cr1k5fw"]
 
 [ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="1_cnmo2"]
 [ext_resource type="Script" path="res://characters/choose_cat.gd" id="1_dba06"]
@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://dnfwl8ob12m3g" path="res://assets/outline/cat_ar_base_outline.png" id="14_dyuox"]
 [ext_resource type="Texture2D" uid="uid://57eq8f2sy663" path="res://assets/outline/ninja_cat_outline.png" id="15_grau0"]
 [ext_resource type="Texture2D" uid="uid://ch8l4afhvm1kp" path="res://assets/texdtbx.png" id="15_vn65l"]
+[ext_resource type="AudioStream" uid="uid://ckjc51bl1ki7o" path="res://audio/powerUp.mp3" id="20_52630"]
+[ext_resource type="AudioStream" uid="uid://b1c3e68gj8rba" path="res://audio/Ninja Jump.mp3" id="20_d3lkt"]
+[ext_resource type="AudioStream" uid="uid://c5b6xxuj04i33" path="res://audio/dieSound.mp3" id="20_srupt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh4te"]
 atlas = ExtResource("5_jevtf")
@@ -1288,6 +1291,15 @@ text = "Wasssup Sensei!
 Disguise for what though?"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="ninja" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_d3lkt")
+
+[node name="ak47" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_srupt")
+
+[node name="fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_52630")
 
 [connection signal="animation_finished" from="npcCat/AnimatedSprite2D" to="npcCat" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="input_event" from="catOne/catOneArea" to="." method="_on_cat_one_area_input_event"]

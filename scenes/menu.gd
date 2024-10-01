@@ -46,21 +46,21 @@ func _on_break_timer_timeout():
 
 func _on_start_pressed():
 	$bg.stop()
-	$click.play()
+	ClickSound.find_child("AudioStreamPlayer").play()
+	get_tree().change_scene_to_file("res://scenes/home.tscn")
 	start = true
 	#get_tree().change_scene_to_file("res://scenes/home.tscn")
 
 
 func _on_quit_pressed():
-	exit = true
-	$click.play()
-	#get_tree().quit()
+	get_tree().quit()
 
 
-func _on_click_finished():
-	if start:
-		get_tree().change_scene_to_file("res://scenes/home.tscn")
-		start = false
-	elif exit:
-		get_tree().quit()
-		exit = false
+#func _on_click_finished():
+	#if start:
+		#ClickSound.find_child("AudioStreamPlayer").play()
+		#get_tree().change_scene_to_file("res://scenes/home.tscn")
+		#start = false
+	#elif exit:
+		#get_tree().quit()
+		#exit = false

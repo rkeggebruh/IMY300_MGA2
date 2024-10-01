@@ -15,6 +15,8 @@ func _physics_process(delta):
 func _process(delta):
 	if State.catSpeed != 0:
 		$lickL0ng.stop()
+	
+	#State.catScale
 	#pass
 
 func _ready():

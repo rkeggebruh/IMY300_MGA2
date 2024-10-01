@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 State="*res://state.gd"
+TrainingSound="*res://scenes/training_sound.tscn"
+ClickSound="*res://scenes/click_sound.tscn"
 
 [input]
 
