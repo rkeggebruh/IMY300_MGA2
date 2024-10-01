@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=75 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bw6u31bd7xqp8" path="res://assets/cup.png" id="10_uchps"]
 [ext_resource type="Texture2D" uid="uid://d1lsla5yufg7t" path="res://assets/picture.png" id="11_lwkyl"]
 [ext_resource type="Texture2D" uid="uid://2rjhx7gedxj6" path="res://assets/pixel-art-1653940255.png" id="12_81giv"]
-[ext_resource type="Texture2D" uid="uid://g7wuktammo36" path="res://assets/soap.png" id="13_l7k4u"]
 [ext_resource type="Texture2D" uid="uid://bx3w2fy5fwu5" path="res://assets/health.png" id="14_eypy6"]
 [ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="15_yhoo6"]
 [ext_resource type="Texture2D" uid="uid://c40sj5s0denkl" path="res://assets/heart3.png" id="17_pa20h"]
@@ -23,7 +22,6 @@
 [ext_resource type="AudioStream" uid="uid://bkg0mblk25fyx" path="res://audio/Cat Purring Sound Effect!.mp3" id="21_fivqh"]
 [ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="22_v8gqg"]
 [ext_resource type="Texture2D" uid="uid://djhp5cdlsoo22" path="res://assets/img.png" id="23_uqxhp"]
-[ext_resource type="Texture2D" uid="uid://dovmt2y5jc8v8" path="res://assets/summer5.png" id="24_i0fl2"]
 [ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="25_acs55"]
 [ext_resource type="Texture2D" uid="uid://brunjxg8je1ff" path="res://assets/punch (1).png" id="26_3w7iy"]
 [ext_resource type="Texture2D" uid="uid://cifi2fnnkasbw" path="res://assets/exportSign.png" id="27_gtkq0"]
@@ -33,6 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://d10tkuvvdf1qi" path="res://assets/outline/arrow.PNG" id="30_h4e00"]
 [ext_resource type="Texture2D" uid="uid://drv4h0dboqa3v" path="res://assets/Cat-2-Stretching.png" id="31_c3f5e"]
 [ext_resource type="Texture2D" uid="uid://dqkw2dsl60a0u" path="res://assets/Cat-2-Idle.png" id="32_hg6iu"]
+[ext_resource type="AudioStream" uid="uid://pcsfb8bw4ttr" path="res://audio/stretch.mp3" id="34_aji81"]
+[ext_resource type="Texture2D" uid="uid://crjr62vajgong" path="res://assets/wall-dark.png" id="34_anyy4"]
+[ext_resource type="Texture2D" uid="uid://dcgnupnij8vlg" path="res://assets/catPaw.png" id="34_lire1"]
+[ext_resource type="Texture2D" uid="uid://dbj20vnwcnlyh" path="res://assets/lightOnWall-pixelicious.png" id="35_pxph1"]
+[ext_resource type="AudioStream" uid="uid://cu7bw2aqvpnu6" path="res://audio/happyRecieved.mp3" id="35_q10lm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syyqi"]
 size = Vector2(750, 500)
@@ -478,10 +481,34 @@ position = Vector2(810, 220)
 scale = Vector2(0.16, 0.16)
 texture = ExtResource("11_lwkyl")
 
-[node name="Summer5" type="Sprite2D" parent="Picture2"]
-position = Vector2(-0.333496, -1.66675)
-scale = Vector2(0.301215, 0.342078)
-texture = ExtResource("24_i0fl2")
+[node name="pic2" type="Sprite2D" parent="Picture2"]
+scale = Vector2(1.36719, 1.31048)
+texture = ExtResource("34_anyy4")
+
+[node name="LightOnWall-pixelicious" type="Sprite2D" parent="Picture2/pic2"]
+position = Vector2(0, 90.6152)
+scale = Vector2(1, 0.476923)
+texture = ExtResource("35_pxph1")
+
+[node name="CatPaw" type="Sprite2D" parent="Picture2/pic2"]
+position = Vector2(-18.2856, 66.7692)
+scale = Vector2(0.274286, 0.247233)
+texture = ExtResource("34_lire1")
+
+[node name="Cup2" type="Sprite2D" parent="Picture2/pic2"]
+position = Vector2(-164.572, 0)
+scale = Vector2(0.228571, 0.238462)
+texture = ExtResource("10_uchps")
+
+[node name="CatFood2" type="Sprite2D" parent="Picture2/pic2"]
+position = Vector2(169.143, 52.4615)
+scale = Vector2(0.0914285, 0.0953846)
+texture = ExtResource("15_yhoo6")
+
+[node name="boredomArea" type="Area2D" parent="Picture2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Picture2/boredomArea"]
+polygon = PackedVector2Array(-375, -250, 375, -250, 375, 250, -375, 250)
 
 [node name="Picture3" type="Sprite2D" parent="."]
 position = Vector2(810, 306)
@@ -582,7 +609,7 @@ step = 1.0
 value = 100.0
 show_percentage = false
 
-[node name="clean" type="ProgressBar" parent="."]
+[node name="boredom2" type="ProgressBar" parent="."]
 offset_left = 58.0
 offset_top = 115.0
 offset_right = 307.0
@@ -592,14 +619,14 @@ step = 1.0
 value = 100.0
 show_percentage = false
 
+[node name="dexterity" type="ProgressBar" parent="."]
+offset_left = 57.0
+offset_top = 156.0
+offset_right = 307.0
+offset_bottom = 183.0
+
 [node name="deplete" type="Timer" parent="."]
 wait_time = 5.0
-
-[node name="heart1" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(582, 446)
-scale = Vector2(0.134722, 0.134722)
-texture = ExtResource("17_pa20h")
 
 [node name="heart2" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -612,11 +639,11 @@ position = Vector2(55, 85)
 scale = Vector2(0.0548499, 0.0509824)
 texture = ExtResource("15_yhoo6")
 
-[node name="Soap" type="Sprite2D" parent="."]
+[node name="dexterity2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(58, 127)
-scale = Vector2(0.289167, 0.289167)
-texture = ExtResource("13_l7k4u")
+position = Vector2(52, 171)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("30_fg12k")
 
 [node name="heart1Time" type="Timer" parent="."]
 
@@ -647,6 +674,12 @@ scale = Vector2(0.1, 0.1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/catPath/black cat/pettingCat"]
 polygon = PackedVector2Array(632, 468, 591, 508, 500, 515, 502, 600, 633, 597, 637, 530, 661, 504)
 
+[node name="heart1" type="Sprite2D" parent="Path2D/catPath/black cat"]
+texture_filter = 1
+position = Vector2(2.99999, -9.59999)
+scale = Vector2(0.0134722, 0.0134722)
+texture = ExtResource("17_pa20h")
+
 [node name="Cat-2-laying" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 1
@@ -667,6 +700,7 @@ wait_time = 6.0
 stream = ExtResource("21_fivqh")
 
 [node name="UI" parent="." instance=ExtResource("22_v8gqg")]
+visible = false
 
 [node name="ExportSign" type="Sprite2D" parent="."]
 position = Vector2(983, 205)
@@ -697,6 +731,18 @@ text = "Hunger"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="boredom" type="Label" parent="."]
+offset_left = 914.0
+offset_top = 203.0
+offset_right = 1055.0
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0.976471, 0.956863, 0.831373, 1)
+theme_override_fonts/font = ExtResource("28_day6o")
+theme_override_font_sizes/font_size = 35
+text = "Boredom"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="bg" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_r0nm5")
 volume_db = -10.0
@@ -706,6 +752,7 @@ autoplay = true
 wait_time = 150.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -21.0
 offset_top = -19.0
 offset_right = 1176.0
@@ -872,9 +919,18 @@ scale = Vector2(0.400474, 0.400474)
 texture = ExtResource("30_h4e00")
 flip_h = true
 
+[node name="firstMeow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_aji81")
+
+[node name="heart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_q10lm")
+
 [connection signal="input_event" from="Picture/hungerBtn" to="." method="_on_hunger_btn_input_event"]
 [connection signal="mouse_entered" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_exited"]
+[connection signal="input_event" from="Picture2/boredomArea" to="." method="_on_boredom_area_input_event"]
+[connection signal="mouse_entered" from="Picture2/boredomArea" to="." method="_on_boredom_area_mouse_entered"]
+[connection signal="mouse_exited" from="Picture2/boredomArea" to="." method="_on_boredom_area_mouse_exited"]
 [connection signal="input_event" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_input_event"]
 [connection signal="mouse_entered" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_exited"]

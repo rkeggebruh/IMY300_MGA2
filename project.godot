@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 State="*res://state.gd"
 TrainingSound="*res://scenes/training_sound.tscn"
 ClickSound="*res://scenes/click_sound.tscn"
+GameTImer="*res://scenes/game_t_imer.tscn"
 
 [input]
 

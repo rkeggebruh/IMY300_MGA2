@@ -829,10 +829,8 @@ script = ExtResource("1_xbaiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_erf85")
-animation = &"itch"
-autoplay = "walk"
-frame = 11
-frame_progress = 1.0
+animation = &"stretch"
+autoplay = "stretch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.1, 0.749999)

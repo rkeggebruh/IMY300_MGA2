@@ -20,7 +20,11 @@ func _process(delta):
 	#pass
 
 func _ready():
+	if State.catSpeed != 0:
+		$AnimatedSprite2D.play("walk")
+	
 	$walk.play()
+	
 	$startTimer.start()
 
 func randomize_animation():

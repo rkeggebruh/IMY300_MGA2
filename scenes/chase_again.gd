@@ -4,9 +4,11 @@ var letterCount = 0
 var label_text = "Chowed that up!"
 var flash_color = Color(0.067, 0.502, 0.804)
 var enterOnce = false
+var insOnce = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$intro.show()
 	$ColorRect.hide()
 	$ColorRect/RichTextLabel.bbcode_enabled = true
 
@@ -14,15 +16,20 @@ func _ready():
 
 
 func _process(delta):
-	var distance = position.distance_to(get_node("mouse").position)
-	if distance < 1:  # Adjust the threshold
-		print("Game Over")
-	
-	if State.caught and !enterOnce:
-		enterOnce = true
-		print("caught")
-		$letterTimer.start()
-		$ColorRect.show()
+	if Input.is_action_just_released("ui_accept") and insOnce:
+		insOnce = false
+		State.chaseSpeed = 250
+		$intro.hide()
+	else:
+		var distance = position.distance_to(get_node("mouse").position)
+		if distance < 1:  # Adjust the threshold
+			print("Game Over")
+		
+		if State.caught and !enterOnce:
+			enterOnce = true
+			print("caught")
+			$letterTimer.start()
+			$ColorRect.show()
 
 
 

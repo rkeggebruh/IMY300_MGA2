@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://26ntb163pfke"]
+[gd_scene load_steps=26 format=3 uid="uid://26ntb163pfke"]
 
 [ext_resource type="Script" path="res://scenes/pr_etraining.gd" id="1_0cgbj"]
 [ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="2_0gtu0"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="7_engqs"]
 [ext_resource type="Texture2D" uid="uid://cpave6lqvc4w" path="res://assets/Keyboard Letters and Symbols.png" id="8_hdesf"]
 [ext_resource type="Texture2D" uid="uid://b7htmbxe6y4so" path="res://assets/Keyboard Extras.png" id="9_m8qyn"]
+[ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="11_0riyc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2oaq"]
 atlas = ExtResource("8_hdesf")
@@ -244,7 +245,7 @@ sprite_frames = SubResource("SpriteFrames_pas24")
 autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-z_index = 1
+z_index = 2
 offset_left = -25.0
 offset_top = -32.0
 offset_right = 1216.0
@@ -253,22 +254,48 @@ color = Color(0.0588235, 0.345098, 0.584314, 1)
 
 [node name="welcom" type="Label" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.113618
-anchor_top = 1.14882
-anchor_right = -0.113618
-anchor_bottom = 1.14882
-offset_left = 497.0
-offset_top = -523.0
-offset_right = 1075.0
-offset_bottom = -414.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.5
+offset_top = -75.0
+offset_right = 387.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
 theme_override_fonts/font = ExtResource("7_engqs")
 theme_override_font_sizes/font_size = 60
-text = "WELCOME TO YOUR TRAINING..."
-metadata/_edit_use_anchors_ = true
+text = "WELCOME TO YOUR PRE-TRAINING...
+experiment with the controls until you feel its right :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="welcom2" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.5
+offset_top = 38.0
+offset_right = 387.5
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.513726, 0.54902, 1)
+theme_override_fonts/font = ExtResource("7_engqs")
+theme_override_font_sizes/font_size = 50
+text = "- space to continue -"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="donBtnLabel" type="ColorRect" parent="."]
 offset_left = 834.0
@@ -306,6 +333,8 @@ theme_override_colors/font_color = Color(0.921569, 0.32549, 0.380392, 1)
 theme_override_fonts/font = ExtResource("7_engqs")
 theme_override_font_sizes/font_size = 90
 text = "DONE"
+
+[node name="UI" parent="." instance=ExtResource("11_0riyc")]
 
 [connection signal="animation_finished" from="down" to="." method="_on_down_animation_finished"]
 [connection signal="animation_finished" from="space" to="." method="_on_space_animation_finished"]

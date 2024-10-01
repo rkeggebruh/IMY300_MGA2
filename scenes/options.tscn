@@ -1,0 +1,130 @@
+[gd_scene load_steps=16 format=3 uid="uid://cd4lfs5ph04bx"]
+
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="1_8fekk"]
+[ext_resource type="Script" path="res://scenes/options.gd" id="1_cbok4"]
+[ext_resource type="Texture2D" uid="uid://dp1i7tp82nbxg" path="res://assets/5.png" id="2_blyk6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emq13"]
+bg_color = Color(0.494118, 0.662745, 0.870588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p2vt"]
+bg_color = Color(0.396078, 0.584314, 0.815686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5le5b"]
+bg_color = Color(0.215686, 0.376471, 0.572549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyb26"]
+bg_color = Color(0.882353, 0.611765, 0.403922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08hrb"]
+bg_color = Color(0.839216, 0.560784, 0.345098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upq5h"]
+bg_color = Color(0.603922, 0.376471, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbvr3"]
+bg_color = Color(0.45098, 0.447059, 0.611765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_083pp"]
+bg_color = Color(0.396078, 0.396078, 0.560784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ml6r"]
+bg_color = Color(0.282353, 0.282353, 0.419608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbwxw"]
+bg_color = Color(0.85098, 0.466667, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y5el"]
+bg_color = Color(0.760784, 0.364706, 0.317647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srw4w"]
+bg_color = Color(0.505882, 0.215686, 0.184314, 1)
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbok4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -309.0
+offset_right = 341.0
+offset_bottom = -25.0
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="tenmis" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8fekk")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_emq13")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5p2vt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5le5b")
+text = "10 minutes"
+
+[node name="twentmins" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8fekk")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyb26")
+theme_override_styles/hover = SubResource("StyleBoxFlat_08hrb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_upq5h")
+text = "20 minutes"
+
+[node name="thirtymins" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8fekk")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_kbvr3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_083pp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ml6r")
+text = "30 minutes"
+
+[node name="forever" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8fekk")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_nbwxw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7y5el")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_srw4w")
+text = "forever"
+
+[node name="5" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(580, 324)
+scale = Vector2(0.509259, 0.509259)
+texture = ExtResource("2_blyk6")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -292.0
+offset_right = 531.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_8fekk")
+theme_override_font_sizes/font_size = 120
+text = "How long would you like the simulation to last for?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/tenmis" to="." method="_on_tenmis_pressed"]
+[connection signal="pressed" from="VBoxContainer/twentmins" to="." method="_on_twentmins_pressed"]
+[connection signal="pressed" from="VBoxContainer/thirtymins" to="." method="_on_thirtymins_pressed"]
+[connection signal="pressed" from="VBoxContainer/forever" to="." method="_on_forever_pressed"]

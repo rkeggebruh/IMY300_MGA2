@@ -12,8 +12,11 @@ var insFinal = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameTImer.find_child("Timer").start()
+	
 	TrainingSound.find_child("AudioStreamPlayer").stop()
-	$heart1.hide()
+	$"Path2D/catPath/black cat/heart1".hide()
+	
 	$ColorRect/arr1.hide()
 	$ColorRect/arr2.hide()
 	$ColorRect/arr3.hide()
@@ -27,6 +30,7 @@ func _ready():
 	
 	if !State.HomeinstructionsDone:
 		$ColorRect.show()
+		$firstMeow.play()
 	if State.HomeinstructionsDone:
 		$deplete.start()
 		$getBiggerTimer.start()
@@ -93,7 +97,8 @@ func _on_deplete_timeout():
 
 func _on_petting_cat_mouse_entered():
 	$love.value += 10
-	$heart1.show()
+	$heart.play()
+	$"Path2D/catPath/black cat/heart1".show()
 	$heart1Time.start()
 
 func _on_petting_cat_mouse_exited():
@@ -103,7 +108,7 @@ func _on_petting_cat_mouse_exited():
 
 func _on_heart_1_time_timeout():
 	#print("timer 1")
-	$heart1.hide()
+	$"Path2D/catPath/black cat/heart1".hide()
 
 
 
@@ -167,3 +172,17 @@ func _on_get_bigger_timer_timeout():
 	#$"Path2D/catPath/black cat".scale *= scale_factor
 	State.catScale += 1
 
+
+
+func _on_boredom_area_mouse_entered():
+	$Picture2/pic2.modulate = Color(1, 0.847, 1)
+
+
+func _on_boredom_area_mouse_exited():
+	$Picture2/pic2.modulate = Color(1, 1, 1)
+
+
+func _on_boredom_area_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_released("leftClick"):
+		ClickSound.find_child("AudioStreamPlayer").play()
+		get_tree().change_scene_to_file("res://scenes/node_2d.tscn")

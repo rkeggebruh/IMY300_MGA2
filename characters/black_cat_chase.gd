@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 200  # Adjust the speed as needed
+#var speed = 200  # Adjust the speed as needed
 var speed_increment = 0.06
 var min_scale = 0.4  # Minimum scale when at the top of the screen
 var max_scale = 3.0  # Maximum scale when at the bottom of the screen
@@ -10,7 +10,7 @@ func _ready():
 	$Timer.start()
 
 func _process(delta):
-	if speed > 250:
+	if State.chaseSpeed > 250:
 		$AnimatedSprite2D.play("running")
 
 	var mouse_position = get_node("../mouse").position
@@ -33,7 +33,7 @@ func _process(delta):
 	$AnimatedSprite2D.scale.y = new_scale
 	$AnimatedSprite2D.scale.x = $AnimatedSprite2D.scale.x * new_scale   # Keep x-scale aligned with Y scale
 
-	velocity = direction * speed
+	velocity = direction * State.chaseSpeed
 	move_and_slide()
 
 func _on_cat_chase_area_mouse_entered():
@@ -41,9 +41,9 @@ func _on_cat_chase_area_mouse_entered():
 	State.caught = true
 	print("game over for real")
 	$Timer.stop()
-	speed = 0
+	State.chaseSpeed = 0
 	$AnimatedSprite2D.play("sit")
 
 func _on_timer_timeout():
-	speed *= (1.3 + speed_increment)
-	print("new speed: ", speed)
+	State.chaseSpeed *= (1.3 + speed_increment)
+	print("new speed: ", State.chaseSpeed)

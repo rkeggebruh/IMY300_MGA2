@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://uu7k4517dbs4"]
+[gd_scene load_steps=64 format=3 uid="uid://uu7k4517dbs4"]
 
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="1_ancph"]
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_aof2v"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scenes/butterflypath.gd" id="8_t2xpv"]
 [ext_resource type="AudioStream" uid="uid://b4d8mmcfeup8o" path="res://audio/clickShort.mp3" id="10_sflih"]
 [ext_resource type="AudioStream" uid="uid://d30e7egojrir8" path="res://audio/NOGYMX - bikes at the pier.mp3" id="11_wu8qe"]
+[ext_resource type="PackedScene" uid="uid://cd4lfs5ph04bx" path="res://scenes/options.tscn" id="12_go3pc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_414dd"]
 bg_color = Color(0.223529, 0.643137, 0.952941, 1)
@@ -414,8 +415,8 @@ metadata/_edit_lock_ = true
 
 [node name="itch" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1073, 576)
-scale = Vector2(8, 8)
+position = Vector2(1101, 538)
+scale = Vector2(3.38, 3.38)
 sprite_frames = SubResource("SpriteFrames_x3ywm")
 autoplay = "default"
 
@@ -495,7 +496,12 @@ stream = ExtResource("11_wu8qe")
 volume_db = -5.0
 autoplay = true
 
+[node name="options" parent="." instance=ExtResource("12_go3pc")]
+z_index = 30
+layout_mode = 1
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]

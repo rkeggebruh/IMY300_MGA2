@@ -9,6 +9,7 @@ var start = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$options.hide()
 	$RichTextLabel.bbcode_enabled = true  # Enable BBCode
 	$Timer.start()
 
@@ -64,3 +65,7 @@ func _on_quit_pressed():
 	#elif exit:
 		#get_tree().quit()
 		#exit = false
+
+
+func _on_options_pressed():
+	$options.show()

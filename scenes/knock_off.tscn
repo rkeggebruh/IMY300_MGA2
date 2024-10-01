@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://4xaqy2qlu752"]
+
+[ext_resource type="Script" path="res://scenes/knock_off.gd" id="1_vqpu1"]
+[ext_resource type="Texture2D" uid="uid://5sda8i8eid4h" path="res://assets/catPawExtraLong.png" id="2_a0qew"]
+
+[node name="knockOff" type="Node2D"]
+script = ExtResource("1_vqpu1")
+
+[node name="CatPaw" type="Sprite2D" parent="."]
+position = Vector2(72, 620)
+scale = Vector2(0.53125, 0.588646)
+texture = ExtResource("2_a0qew")

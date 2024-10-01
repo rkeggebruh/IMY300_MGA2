@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca2on01xneoil"
+path="res://.godot/imported/lady hear me tonight (instrumental) (slowedreverb).mp3-137b588ec346b81b8e6d1ed63156debd.mp3str"
+
+[deps]
+
+source_file="res://audio/lady hear me tonight (instrumental) (slowedreverb).mp3"
+dest_files=["res://.godot/imported/lady hear me tonight (instrumental) (slowedreverb).mp3-137b588ec346b81b8e6d1ed63156debd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,531 @@
+[gd_scene load_steps=41 format=3 uid="uid://bgn3sdde2rdst"]
+
+[ext_resource type="Script" path="res://scenes/node_2d.gd" id="1_sghox"]
+[ext_resource type="PackedScene" uid="uid://4xaqy2qlu752" path="res://scenes/knock_off.tscn" id="2_32d74"]
+[ext_resource type="Texture2D" uid="uid://bw6u31bd7xqp8" path="res://assets/cup.png" id="4_qidks"]
+[ext_resource type="Texture2D" uid="uid://dv1gpqy1ivnws" path="res://assets/plant.png" id="5_k6fml"]
+[ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="5_phhpl"]
+[ext_resource type="Texture2D" uid="uid://dbj20vnwcnlyh" path="res://assets/lightOnWall-pixelicious.png" id="6_yi1hh"]
+[ext_resource type="Texture2D" uid="uid://g7wuktammo36" path="res://assets/soap.png" id="7_num50"]
+[ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="8_o1562"]
+[ext_resource type="Texture2D" uid="uid://irwcxb4q1cqg" path="res://assets/lamp.PNG" id="9_ysxww"]
+[ext_resource type="Texture2D" uid="uid://c1ioqyd1dpvw" path="res://assets/catbed.png" id="10_grdrk"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="11_wv3jk"]
+[ext_resource type="Texture2D" uid="uid://dhexc7nwpw26w" path="res://assets/Cat-2-Walk.png" id="12_gaoe0"]
+[ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="13_2l8we"]
+
+[sub_resource type="Animation" id="Animation_x2i76"]
+resource_name = "knock"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(260, 287), Vector2(12, -127)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.56571]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pht3t"]
+_data = {
+"knock": SubResource("Animation_x2i76")
+}
+
+[sub_resource type="Animation" id="Animation_uec6d"]
+resource_name = "knock"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(535, 292), Vector2(830, -127)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.58483]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73oas"]
+_data = {
+"knock": SubResource("Animation_uec6d")
+}
+
+[sub_resource type="Animation" id="Animation_1h5lt"]
+resource_name = "knock"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1070, 389), Vector2(1442, 249)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -2.92343]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kgkak"]
+_data = {
+"knock": SubResource("Animation_1h5lt")
+}
+
+[sub_resource type="Animation" id="Animation_xlogw"]
+resource_name = "knock"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(991, 566), Vector2(391, -232)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3874k"]
+_data = {
+"knock": SubResource("Animation_xlogw")
+}
+
+[sub_resource type="Animation" id="Animation_j7xi3"]
+resource_name = "knock"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(956, 230), Vector2(1403, -336)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqfxv"]
+_data = {
+"knock": SubResource("Animation_j7xi3")
+}
+
+[sub_resource type="Animation" id="Animation_22uux"]
+resource_name = "knock"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(368.75, 567.25), Vector2(-395, 125)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -4.36681]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plmrq"]
+_data = {
+"knock": SubResource("Animation_22uux")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jveo7"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqy64"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv0yw"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wv5y"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3yul"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faoof"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxan2"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01uqp"]
+atlas = ExtResource("12_gaoe0")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcskl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jveo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqy64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv0yw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wv5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3yul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faoof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxan2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01uqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n522w"]
+bg_color = Color(0.384314, 0.643137, 0.737255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fepx1"]
+bg_color = Color(0.298039, 0.533333, 0.619608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jppp"]
+bg_color = Color(0.152941, 0.305882, 0.360784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjdgy"]
+bg_color = Color(0.886275, 0.462745, 0.352941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkvgq"]
+bg_color = Color(0.772549, 0.352941, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_676u5"]
+bg_color = Color(0.580392, 0.247059, 0.156863, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_sghox")
+
+[node name="knockOff" parent="." instance=ExtResource("2_32d74")]
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(260, 287)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_qidks")
+
+[node name="cupArea" type="Area2D" parent="Cup"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cup/cupArea"]
+polygon = PackedVector2Array(34, -134, -184, -110, -182, 12, -130, 114, -46, 140, 66, 124, 118, 74, 162, 34, 176, -4, 160, -56, 134, -88, 102, -114, 68, -128)
+
+[node name="cupOff" type="AnimationPlayer" parent="Cup"]
+libraries = {
+"": SubResource("AnimationLibrary_pht3t")
+}
+
+[node name="Plant" type="Sprite2D" parent="."]
+position = Vector2(535, 292)
+scale = Vector2(0.157904, 0.157904)
+texture = ExtResource("5_k6fml")
+
+[node name="plantArea" type="Area2D" parent="Plant"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plant/plantArea"]
+polygon = PackedVector2Array(-158.324, -367.311, -227.987, 151.99, -246.985, 335.646, -208.988, 411.641, 25.3313, 411.641, 221.653, 386.309, 234.319, 284.982, 202.654, 120.326, 221.653, -107.66, 215.32, -151.991, 151.99, -310.314, 94.9937, -367.311, 44.3301, -379.977)
+
+[node name="plantOff" type="AnimationPlayer" parent="Plant"]
+libraries = {
+"": SubResource("AnimationLibrary_73oas")
+}
+
+[node name="Soap" type="Sprite2D" parent="."]
+position = Vector2(1070, 389)
+scale = Vector2(0.477778, 0.477778)
+texture = ExtResource("7_num50")
+
+[node name="soapArea" type="Area2D" parent="Soap"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Soap/soapArea"]
+polygon = PackedVector2Array(14.6509, -50.2327, 6.27881, -43.9536, -14.6514, -35.5815, -31.3955, -27.2094, -69.0701, -14.6512, -73.2561, -10.4652, -77.4421, 4.18597, -71.1631, 14.6511, -58.605, 27.2092, -43.9536, 46.0464, -29.3025, 56.5115, -6.2793, 66.9766, 37.6743, 46.0464, 41.8604, 27.2092, 50.2324, 10.465, 66.9766, -2.09314, 75.3486, -14.6512, 71.1626, -29.3024, 50.2324, -39.7675, 25.116, -43.9536)
+
+[node name="soapOff" type="AnimationPlayer" parent="Soap"]
+libraries = {
+"": SubResource("AnimationLibrary_kgkak")
+}
+
+[node name="CatFood" type="Sprite2D" parent="."]
+position = Vector2(991, 566)
+scale = Vector2(0.101039, 0.101039)
+texture = ExtResource("8_o1562")
+
+[node name="catFoodArea" type="Area2D" parent="CatFood"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CatFood/catFoodArea"]
+polygon = PackedVector2Array(247.43, -257.325, 197.943, -316.708, 59.3838, -385.988, -69.2793, -385.988, -128.662, -366.194, -267.222, -306.811, -287.017, -237.531, -257.325, -118.766, -227.634, -9.89697, -237.53, 168.251, -247.428, 267.223, -237.53, 306.812, -148.456, 356.297, 108.869, 385.989, 197.943, 385.989, 277.121, 306.812, 277.121, 207.84, 277.121, 128.663, 287.018, 9.89746, 296.915, -69.2798, 296.915, -188.045)
+
+[node name="foodOf" type="AnimationPlayer" parent="CatFood"]
+libraries = {
+"": SubResource("AnimationLibrary_3874k")
+}
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(956, 230)
+scale = Vector2(0.505531, 0.505531)
+texture = ExtResource("9_ysxww")
+
+[node name="lampAreea" type="Area2D" parent="Lamp"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lamp/lampAreea"]
+polygon = PackedVector2Array(-3.9563, -116.709, -77.1467, -3.95624, -67.2561, 67.256, -85.0592, 116.709, 9.8905, 124.621, 41.5404, 92.9716, -3.9563, 81.1028, -31.65, 57.3654, -27.6937, -13.8468, 9.8905, -41.5405, 45.4966, -37.5843, 73.1903, -73.1904, 67.256, -98.9059)
+
+[node name="lampOff" type="AnimationPlayer" parent="Lamp"]
+libraries = {
+"": SubResource("AnimationLibrary_qqfxv")
+}
+
+[node name="Catbed" type="Sprite2D" parent="."]
+position = Vector2(368.75, 567.25)
+scale = Vector2(0.184184, 0.184184)
+texture = ExtResource("10_grdrk")
+
+[node name="catBedArea" type="Area2D" parent="Catbed"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Catbed/catBedArea"]
+polygon = PackedVector2Array(-52.9363, -185.956, -253.823, -88.2275, -362.41, 47.5066, -161.524, 172.382, 142.521, 150.665, 267.396, 107.229, 332.548, -12.2163, 305.402, -137.092, 245.679, -223.962, 147.95, -223.962)
+
+[node name="catBedOff" type="AnimationPlayer" parent="Catbed"]
+libraries = {
+"": SubResource("AnimationLibrary_plmrq")
+}
+
+[node name="LightOnWall-pixelicious(1)" type="Sprite2D" parent="."]
+modulate = Color(0.580392, 0.580392, 0.580392, 1)
+z_index = -2
+position = Vector2(601, 316)
+scale = Vector2(2.49267, 2.49267)
+texture = ExtResource("5_phhpl")
+
+[node name="LightOnWall-pixelicious" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(405, 591)
+rotation = -3.14159
+scale = Vector2(3.09375, 2.04252)
+texture = ExtResource("6_yi1hh")
+
+[node name="intro" type="ColorRect" parent="."]
+z_index = 2
+offset_left = -25.0
+offset_top = -32.0
+offset_right = 1216.0
+offset_bottom = 687.0
+color = Color(0.0588235, 0.345098, 0.584314, 1)
+
+[node name="welcom" type="Label" parent="intro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.5
+offset_top = -100.5
+offset_right = 449.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.756863, 0.807843, 1)
+theme_override_fonts/font = ExtResource("11_wv3jk")
+theme_override_font_sizes/font_size = 60
+text = "KNOCK THINGS OFF THE TABLE!
+Use your paw to bash things out of sight, out of mind ;)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="welcom2" type="Label" parent="intro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.5
+offset_top = 35.5
+offset_right = 449.5
+offset_bottom = 236.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("11_wv3jk")
+theme_override_font_sizes/font_size = 50
+text = "- Space to continue -"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="done" type="ColorRect" parent="."]
+z_index = 2
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 1175.0
+offset_bottom = 661.0
+color = Color(0.952941, 0.572549, 0.376471, 0.662745)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="done"]
+texture_filter = 1
+position = Vector2(599, 411)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_jcskl")
+autoplay = "default"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="done"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.5
+offset_top = -157.5
+offset_right = 575.5
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("11_wv3jk")
+theme_override_font_sizes/normal_font_size = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="done"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.5
+offset_top = -202.0
+offset_right = 216.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="again" type="Button" parent="done/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_wv3jk")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_n522w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fepx1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5jppp")
+text = "Play again"
+
+[node name="back" type="Button" parent="done/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_wv3jk")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_rjdgy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gkvgq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_676u5")
+text = "Go back to napping"
+
+[node name="UI" parent="." instance=ExtResource("13_2l8we")]
+
+[connection signal="mouse_entered" from="Cup/cupArea" to="." method="_on_cup_area_mouse_entered"]
+[connection signal="mouse_entered" from="Plant/plantArea" to="." method="_on_plant_area_mouse_entered"]
+[connection signal="mouse_entered" from="Soap/soapArea" to="." method="_on_soap_area_mouse_entered"]
+[connection signal="mouse_entered" from="CatFood/catFoodArea" to="." method="_on_cat_food_area_mouse_entered"]
+[connection signal="mouse_entered" from="Lamp/lampAreea" to="." method="_on_lamp_areea_mouse_entered"]
+[connection signal="mouse_entered" from="Catbed/catBedArea" to="." method="_on_cat_bed_area_mouse_entered"]
+[connection signal="pressed" from="done/VBoxContainer/again" to="." method="_on_again_pressed"]
+[connection signal="pressed" from="done/VBoxContainer/back" to="." method="_on_back_pressed"]

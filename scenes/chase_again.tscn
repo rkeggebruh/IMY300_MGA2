@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://hsx6ueb7tbij"]
+[gd_scene load_steps=25 format=3 uid="uid://hsx6ueb7tbij"]
 
 [ext_resource type="Texture2D" uid="uid://clrr7maa7r4bx" path="res://assets/49685498_9285857.jpg" id="1_5fdoc"]
 [ext_resource type="Script" path="res://scenes/chase_again.gd" id="1_wq7ei"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="6_21q87"]
 [ext_resource type="Texture2D" uid="uid://dhexc7nwpw26w" path="res://assets/Cat-2-Walk.png" id="7_hm801"]
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="9_0qwex"]
+[ext_resource type="AudioStream" uid="uid://ca2on01xneoil" path="res://audio/lady hear me tonight (instrumental) (slowedreverb).mp3" id="9_kychd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jveo7"]
 atlas = ExtResource("7_hm801")
@@ -100,6 +101,7 @@ scale = Vector2(0.4605, 0.4605)
 texture = ExtResource("1_5fdoc")
 
 [node name="mouse" type="Sprite2D" parent="."]
+z_index = 5
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_yc1y5")
@@ -187,6 +189,64 @@ offset_top = 200.0
 offset_right = 1449.0
 offset_bottom = 288.0
 color = Color(0.0666667, 0.501961, 0.803922, 1)
+
+[node name="intro" type="ColorRect" parent="."]
+z_index = 2
+offset_left = -25.0
+offset_top = -32.0
+offset_right = 1216.0
+offset_bottom = 687.0
+color = Color(0.0588235, 0.345098, 0.584314, 1)
+
+[node name="welcom" type="Label" parent="intro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.5
+offset_top = -100.5
+offset_right = 449.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.756863, 0.807843, 1)
+theme_override_fonts/font = ExtResource("9_0qwex")
+theme_override_font_sizes/font_size = 60
+text = "CATCH THAT BUTTERFLY TO FEED MEOWCHI!
+move your mouse around and he will chase it. The longer it takes him to catch it, the more his food is worth :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="welcom2" type="Label" parent="intro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.5
+offset_top = 35.5
+offset_right = 449.5
+offset_bottom = 236.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0.596078, 0.639216, 1)
+theme_override_fonts/font = ExtResource("9_0qwex")
+theme_override_font_sizes/font_size = 50
+text = "- Space to continue -"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_kychd")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/again" to="." method="_on_again_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/back" to="." method="_on_back_pressed"]

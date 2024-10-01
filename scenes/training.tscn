@@ -728,7 +728,7 @@ position = Vector2(1109, 545)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_yfpws")
 autoplay = "default"
-frame_progress = 0.466963
+frame_progress = 0.961276
 
 [node name="meowchi" type="AnimatedSprite2D" parent="ColorRect"]
 texture_filter = 1
@@ -736,7 +736,7 @@ position = Vector2(599, 413)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_xkd63")
 autoplay = "default"
-frame_progress = 0.091079
+frame_progress = 0.585392
 
 [node name="letterTimer" type="Timer" parent="."]
 wait_time = 0.06
