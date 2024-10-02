@@ -982,16 +982,16 @@ stream = ExtResource("34_aji81")
 stream = ExtResource("35_q10lm")
 
 [node name="deplete" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 7.0
 
 [node name="depleteFood" type="Timer" parent="."]
 wait_time = 6.0
 
 [node name="depleteBoredom" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 9.0
 
 [node name="depleteDexterity" type="Timer" parent="."]
-wait_time = 12.0
+wait_time = 10.0
 
 [connection signal="input_event" from="Picture/hungerBtn" to="." method="_on_hunger_btn_input_event"]
 [connection signal="mouse_entered" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_entered"]
