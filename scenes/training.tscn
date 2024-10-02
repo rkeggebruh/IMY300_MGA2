@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://fqojp04081c1"]
+[gd_scene load_steps=78 format=3 uid="uid://fqojp04081c1"]
 
 [ext_resource type="PackedScene" uid="uid://bi4uue2ntjxvf" path="res://characters/ninja_cat.tscn" id="1_rlmqk"]
 [ext_resource type="Script" path="res://scenes/training.gd" id="1_x3m42"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://dqkw2dsl60a0u" path="res://assets/Cat-2-Idle.png" id="15_c75ea"]
 [ext_resource type="AudioStream" uid="uid://bsb1w6eturj0i" path="res://audio/yipee.mp3" id="19_j1hir"]
 [ext_resource type="AudioStream" uid="uid://d28864jybvffu" path="res://audio/Still DRE.mp3" id="20_5efap"]
+[ext_resource type="Texture2D" uid="uid://dsy1eirg6qocj" path="res://assets/punch.png" id="21_vhkxm"]
+[ext_resource type="AudioStream" uid="uid://b1c3e68gj8rba" path="res://audio/Ninja Jump.mp3" id="22_8cwrr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayudg"]
 bg_color = Color(0.301961, 0.654902, 0.745098, 1)
@@ -392,6 +394,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t42in"]
+bg_color = Color(1, 0.690196, 0.388235, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="training" type="Node2D"]
 script = ExtResource("1_x3m42")
 
@@ -755,6 +764,27 @@ pitch_scale = 1.29
 stream = ExtResource("20_5efap")
 volume_db = -5.0
 
+[node name="dexterity" type="ProgressBar" parent="."]
+offset_left = 267.5
+offset_top = 46.5
+offset_right = 517.5
+offset_bottom = 73.5
+theme_override_styles/fill = SubResource("StyleBoxFlat_t42in")
+value = 100.0
+show_percentage = false
+
+[node name="dexterity2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(265, 53)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("21_vhkxm")
+
+[node name="repleteDex" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="woosh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_8cwrr")
+
 [connection signal="timeout" from="break" to="." method="_on_break_timeout"]
 [connection signal="timeout" from="display" to="." method="_on_display_timeout"]
 [connection signal="timeout" from="makeItHarder2" to="." method="_on_make_it_harder_2_timeout"]
@@ -764,3 +794,4 @@ volume_db = -5.0
 [connection signal="pressed" from="ColorRect/VBoxContainer/home" to="." method="_on_home_pressed"]
 [connection signal="timeout" from="letterTimer" to="." method="_on_letter_timer_timeout"]
 [connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]
+[connection signal="timeout" from="repleteDex" to="." method="_on_replete_dex_timeout"]

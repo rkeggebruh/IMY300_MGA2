@@ -6,12 +6,19 @@ var insOne = true
 var insTwo = false
 var insThree = false
 var insFour = false
+var insFive = false
 var insFinal = false
 
 #var newCount = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	$hunger.value = State.hungerStatus
+	$boredom2.value = State.boredStatus
+	$dexterity.value = State.dexterityStatus
+	$love.value = State.attentionStatus
+	
 	GameTImer.find_child("Timer").start()
 	
 	TrainingSound.find_child("AudioStreamPlayer").stop()
@@ -27,12 +34,17 @@ func _ready():
 	$ColorRect/arrowUp.hide()
 	$ColorRect/arrowDown.hide()
 	$ColorRect/threeArrs2.hide()
+	$ColorRect/arrow4.hide()
+	$ColorRect/arr4.hide()
 	
 	if !State.HomeinstructionsDone:
 		$ColorRect.show()
 		$firstMeow.play()
 	if State.HomeinstructionsDone:
 		$deplete.start()
+		$depleteFood.start()
+		$depleteBoredom.start()
+		$depleteDexterity.start()
 		$getBiggerTimer.start()
 		$ColorRect.hide()
 	
@@ -40,6 +52,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if State.hungerStatus == 0:
+		State.gameOver = true
+	
+	#if State.dexterityStatus < 60:
+		#State.catSpeed = 0.04
+	#else:
+		#State.catSpeed = 0.08
+	
 	if State.scaleUpdate:
 		$"Path2D/catPath/black cat".scale.x += State.catScale
 		$"Path2D/catPath/black cat".scale.y += State.catScale
@@ -73,11 +94,19 @@ func _process(delta):
 			$ColorRect/Arrow3/AnimationPlayer.play("arrow")
 		elif Input.is_action_just_released("ui_accept") and insFour:
 			insFour = false
+			insFive = true
+			$ColorRect/arr3.hide()
+			$ColorRect/Arrow3.hide()
+			$ColorRect/arr3.hide()
+			$ColorRect/Arrow3.hide()
+			$ColorRect/arrow4.show()
+			$ColorRect/arrow4/AnimationPlayer.play("knock")
+			$ColorRect/arr4.show()
+		elif Input.is_action_just_released("ui_accept") and insFive:
+			insFive = false
 			insFinal = true
-			$ColorRect/arr3.hide()
-			$ColorRect/Arrow3.hide()
-			$ColorRect/arr3.hide()
-			$ColorRect/Arrow3.hide()
+			$ColorRect/arrow4.hide()
+			$ColorRect/arr4.hide()
 			$ColorRect/threeArrs2.show()
 			$ColorRect/threeArrs.play("arrow")
 			$ColorRect/arrowMid.show()
@@ -87,12 +116,11 @@ func _process(delta):
 		elif Input.is_action_just_released("ui_accept") and insFinal:
 			$ColorRect.hide()
 			$deplete.start()
+			$depleteFood.start()
+			$depleteBoredom.start()
+			$depleteDexterity.start()
 			$getBiggerTimer.start()
 			State.HomeinstructionsDone = true
-
-
-func _on_deplete_timeout():
-	$love.value -= 10
 
 
 func _on_petting_cat_mouse_entered():
@@ -186,3 +214,30 @@ func _on_boredom_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_released("leftClick"):
 		ClickSound.find_child("AudioStreamPlayer").play()
 		get_tree().change_scene_to_file("res://scenes/node_2d.tscn")
+
+
+
+func _on_deplete_timeout():
+	$love.value -= 10
+	State.attentionStatus = $love.value
+
+
+func _on_deplete_food_timeout():
+	$hunger.value -= 10
+	State.hungerStatus = $hunger.value
+
+
+func _on_deplete_boredom_timeout():
+	$boredom2.value -= 10
+	State.boredStatus = $boredom2.value
+
+
+func _on_deplete_dexterity_timeout():
+	$dexterity.value -= 10
+	State.dexterityStatus = $dexterity.value
+
+
+#var boredStatus = 100
+#var attentionStatus = 100
+#var dexterityStatus = 100
+#var hungerStatus = 100

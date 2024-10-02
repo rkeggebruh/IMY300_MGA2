@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://1i3i2cr1k5fw"]
+[gd_scene load_steps=153 format=3 uid="uid://1i3i2cr1k5fw"]
 
 [ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="1_cnmo2"]
 [ext_resource type="Script" path="res://characters/choose_cat.gd" id="1_dba06"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://ckjc51bl1ki7o" path="res://audio/powerUp.mp3" id="20_52630"]
 [ext_resource type="AudioStream" uid="uid://b1c3e68gj8rba" path="res://audio/Ninja Jump.mp3" id="20_d3lkt"]
 [ext_resource type="AudioStream" uid="uid://c5b6xxuj04i33" path="res://audio/dieSound.mp3" id="20_srupt"]
+[ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="23_t5jnu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rh4te"]
 atlas = ExtResource("5_jevtf")
@@ -1300,6 +1301,8 @@ stream = ExtResource("20_srupt")
 
 [node name="fire" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_52630")
+
+[node name="UI" parent="." instance=ExtResource("23_t5jnu")]
 
 [connection signal="animation_finished" from="npcCat/AnimatedSprite2D" to="npcCat" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="input_event" from="catOne/catOneArea" to="." method="_on_cat_one_area_input_event"]

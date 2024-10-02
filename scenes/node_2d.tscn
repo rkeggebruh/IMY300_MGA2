@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bgn3sdde2rdst"]
+[gd_scene load_steps=45 format=3 uid="uid://bgn3sdde2rdst"]
 
 [ext_resource type="Script" path="res://scenes/node_2d.gd" id="1_sghox"]
 [ext_resource type="PackedScene" uid="uid://4xaqy2qlu752" path="res://scenes/knock_off.tscn" id="2_32d74"]
@@ -13,6 +13,9 @@
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="11_wv3jk"]
 [ext_resource type="Texture2D" uid="uid://dhexc7nwpw26w" path="res://assets/Cat-2-Walk.png" id="12_gaoe0"]
 [ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="13_2l8we"]
+[ext_resource type="Texture2D" uid="uid://b7wnd8m8bjcqu" path="res://assets/catPawShort.png" id="14_0fgtr"]
+[ext_resource type="AudioStream" uid="uid://dgos80eoup3vg" path="res://audio/knockOff.mp3" id="15_emjjx"]
+[ext_resource type="AudioStream" uid="uid://dgeyco0vjvv6t" path="res://audio/New Person, Same Old Mistakes (Instrumental but the best part ) LOOP.mp3" id="16_e1c8t"]
 
 [sub_resource type="Animation" id="Animation_x2i76"]
 resource_name = "knock"
@@ -292,6 +295,13 @@ bg_color = Color(0.772549, 0.352941, 0.243137, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_676u5"]
 bg_color = Color(0.580392, 0.247059, 0.156863, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8ipk"]
+bg_color = Color(0.305882, 0.890196, 0.803922, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sghox")
 
@@ -520,6 +530,29 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_676u5")
 text = "Go back to napping"
 
 [node name="UI" parent="." instance=ExtResource("13_2l8we")]
+
+[node name="boredom2" type="ProgressBar" parent="."]
+offset_left = 58.0
+offset_top = 53.0
+offset_right = 307.0
+offset_bottom = 80.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_f8ipk")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="CatPaw" type="Sprite2D" parent="."]
+position = Vector2(54, 63)
+scale = Vector2(0.105322, 0.105322)
+texture = ExtResource("14_0fgtr")
+
+[node name="knockOff2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_emjjx")
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_e1c8t")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="mouse_entered" from="Cup/cupArea" to="." method="_on_cup_area_mouse_entered"]
 [connection signal="mouse_entered" from="Plant/plantArea" to="." method="_on_plant_area_mouse_entered"]

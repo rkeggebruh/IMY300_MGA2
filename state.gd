@@ -12,6 +12,7 @@ var catScale = 1
 var scaleUpdate = false
 var HomeinstructionsDone = false
 var chaseSpeed = 0
+var gameOver = false
 
 var tenMins = false
 var twentyMins = false
@@ -19,7 +20,7 @@ var thirtyMins = false
 var foreverMins = false
 var timerUpdated = false
 
-var happyStatus = 100
+var boredStatus = 100
 var attentionStatus = 100
 var dexterityStatus = 100
 var hungerStatus = 100

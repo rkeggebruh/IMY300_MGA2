@@ -384,7 +384,7 @@ theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_njy57")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gepob")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8nwdi")
-text = "Options"
+text = "Back"
 
 [node name="exit to main" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -455,4 +455,5 @@ sprite_frames = SubResource("SpriteFrames_8ufbj")
 autoplay = "default"
 
 [connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/exit to main" to="." method="_on_exit_to_main_pressed"]

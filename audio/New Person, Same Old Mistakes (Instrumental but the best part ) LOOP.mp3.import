@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgeyco0vjvv6t"
+path="res://.godot/imported/New Person, Same Old Mistakes (Instrumental but the best part ) LOOP.mp3-a76c41818129b17c84d99d21151154db.mp3str"
+
+[deps]
+
+source_file="res://audio/New Person, Same Old Mistakes (Instrumental but the best part ) LOOP.mp3"
+dest_files=["res://.godot/imported/New Person, Same Old Mistakes (Instrumental but the best part ) LOOP.mp3-a76c41818129b17c84d99d21151154db.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,258 @@
-[gd_scene load_steps=2 format=3 uid="uid://btvmataqftx3o"]
+[gd_scene load_steps=47 format=3 uid="uid://btvmataqftx3o"]
 
 [ext_resource type="Script" path="res://GameTImer.gd" id="1_ayv45"]
+[ext_resource type="Texture2D" uid="uid://dovmt2y5jc8v8" path="res://assets/summer5.png" id="2_42lo4"]
+[ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="3_cbw2n"]
+[ext_resource type="Texture2D" uid="uid://c40sj5s0denkl" path="res://assets/heart3.png" id="4_mt1ya"]
+[ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="5_kh52u"]
+[ext_resource type="Texture2D" uid="uid://dhwve1l474pm7" path="res://assets/Cat-2-Run.png" id="5_tl642"]
+[ext_resource type="Texture2D" uid="uid://drv4h0dboqa3v" path="res://assets/Cat-2-Stretching.png" id="7_16fnu"]
+[ext_resource type="Texture2D" uid="uid://c6l3wmo5ilk1l" path="res://assets/Cat-2-Licking 1.png" id="7_hgf7c"]
+[ext_resource type="Texture2D" uid="uid://b7wnd8m8bjcqu" path="res://assets/catPawShort.png" id="9_1x46n"]
+[ext_resource type="Texture2D" uid="uid://dsy1eirg6qocj" path="res://assets/punch.png" id="10_od8r0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptob6"]
+bg_color = Color(0.988235, 0.858824, 0.905882, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jajwl"]
+atlas = ExtResource("5_tl642")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6mgi"]
+atlas = ExtResource("5_tl642")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpinb"]
+atlas = ExtResource("5_tl642")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2heca"]
+atlas = ExtResource("5_tl642")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iint"]
+atlas = ExtResource("5_tl642")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4enr"]
+atlas = ExtResource("5_tl642")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0rk1"]
+atlas = ExtResource("5_tl642")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynbe5"]
+atlas = ExtResource("5_tl642")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hinyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jajwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6mgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpinb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2heca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iint")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4enr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0rk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynbe5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aolgr"]
+bg_color = Color(0.6, 1, 0.784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4ttj"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mejn"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n61j8"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy8lt"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahkoy"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87oc0"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atphn"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1c6l"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svqyc"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(400, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3npn8"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(450, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kasq"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(500, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4uweh"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(550, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtci1"]
+atlas = ExtResource("7_16fnu")
+region = Rect2(600, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vbxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4ttj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mejn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n61j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy8lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahkoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87oc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atphn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1c6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svqyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3npn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kasq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4uweh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtci1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpr3x"]
+bg_color = Color(0.305882, 0.890196, 0.803922, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6rub"]
+atlas = ExtResource("7_hgf7c")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afaa8"]
+atlas = ExtResource("7_hgf7c")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk0i4"]
+atlas = ExtResource("7_hgf7c")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5u34"]
+atlas = ExtResource("7_hgf7c")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70467"]
+atlas = ExtResource("7_hgf7c")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mcuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6rub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afaa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk0i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5u34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70467")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiprb"]
+bg_color = Color(0.929412, 0.247059, 0.356863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1i82"]
+bg_color = Color(0.807843, 0.164706, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dinv"]
+bg_color = Color(0.576471, 0.0901961, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opdu5"]
+bg_color = Color(1, 0.690196, 0.388235, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="GameTImer" type="Node"]
 script = ExtResource("1_ayv45")
@@ -8,4 +260,145 @@ script = ExtResource("1_ayv45")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1800.0
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 15
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -557.0
+offset_top = 85.0
+offset_right = 564.0
+offset_bottom = 381.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_cbw2n")
+theme_override_font_sizes/normal_font_size = 150
+autowrap_mode = 2
+
+[node name="Summer5" type="Sprite2D" parent="."]
+modulate = Color(0.721569, 0.721569, 0.721569, 1)
+z_index = 10
+position = Vector2(585, 319)
+scale = Vector2(0.520448, 0.520448)
+texture = ExtResource("2_42lo4")
+
+[node name="letterTimer" type="Timer" parent="."]
+wait_time = 0.08
+
+[node name="breakTimer" type="Timer" parent="."]
+wait_time = 0.02
+
+[node name="love" type="ProgressBar" parent="."]
+z_index = 12
+offset_left = 53.0
+offset_top = 461.0
+offset_right = 310.0
+offset_bottom = 488.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ptob6")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="heart2" type="Sprite2D" parent="love"]
+texture_filter = 1
+position = Vector2(0.499996, 11.25)
+scale = Vector2(0.134722, 0.134722)
+texture = ExtResource("4_mt1ya")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="love"]
+texture_filter = 1
+position = Vector2(117, -71)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_hinyw")
+autoplay = "default"
+frame_progress = 0.26084
+
+[node name="hunger" type="ProgressBar" parent="."]
+z_index = 12
+offset_left = 53.0
+offset_top = 504.0
+offset_right = 308.0
+offset_bottom = 531.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_aolgr")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="CatFood" type="Sprite2D" parent="hunger"]
+position = Vector2(0.499996, 11.25)
+scale = Vector2(0.0548499, 0.0509824)
+texture = ExtResource("5_kh52u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hunger"]
+texture_filter = 1
+position = Vector2(893, -97)
+scale = Vector2(3.38, 3.38)
+sprite_frames = SubResource("SpriteFrames_1vbxx")
+
+[node name="boredom2" type="ProgressBar" parent="."]
+z_index = 12
+offset_left = 53.0
+offset_top = 546.0
+offset_right = 307.0
+offset_bottom = 573.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_tpr3x")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="lick" type="AnimatedSprite2D" parent="boredom2"]
+texture_filter = 1
+position = Vector2(992, -11)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_3mcuf")
+autoplay = "default"
+
+[node name="Button" type="Button" parent="boredom2"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 9.0
+offset_right = 648.0
+offset_bottom = 65.0
+theme_override_fonts/font = ExtResource("3_cbw2n")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiprb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c1i82")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4dinv")
+text = "Restart"
+
+[node name="CatPaw" type="Sprite2D" parent="boredom2"]
+position = Vector2(1, 10)
+scale = Vector2(0.105322, 0.105322)
+texture = ExtResource("9_1x46n")
+
+[node name="dexterity" type="ProgressBar" parent="."]
+z_index = 12
+offset_left = 53.0
+offset_top = 587.0
+offset_right = 309.0
+offset_bottom = 614.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_opdu5")
+value = 100.0
+show_percentage = false
+
+[node name="dexterity2" type="Sprite2D" parent="dexterity"]
+texture_filter = 1
+position = Vector2(-4.76837e-07, 8)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("10_od8r0")
+
+[node name="Label" type="Label" parent="dexterity"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = -166.0
+offset_right = 977.0
+offset_bottom = -67.0
+theme_override_fonts/font = ExtResource("3_cbw2n")
+theme_override_font_sizes/font_size = 60
+text = "Meowchi is a bit mad at you, but luckily he always forgives <3"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="letterTimer" to="." method="_on_letter_timer_timeout"]
+[connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]
+[connection signal="pressed" from="boredom2/Button" to="." method="_on_button_pressed"]

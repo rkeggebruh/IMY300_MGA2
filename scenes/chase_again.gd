@@ -8,6 +8,8 @@ var insOnce = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	State.caught = false
+	$hunger.value = State.hungerStatus
 	$intro.show()
 	$ColorRect.hide()
 	$ColorRect/RichTextLabel.bbcode_enabled = true
@@ -19,6 +21,7 @@ func _process(delta):
 	if Input.is_action_just_released("ui_accept") and insOnce:
 		insOnce = false
 		State.chaseSpeed = 250
+		$repleteHunger.start()
 		$intro.hide()
 	else:
 		var distance = position.distance_to(get_node("mouse").position)
@@ -26,6 +29,7 @@ func _process(delta):
 			print("Game Over")
 		
 		if State.caught and !enterOnce:
+			$repleteHunger.stop()
 			enterOnce = true
 			print("caught")
 			$letterTimer.start()
@@ -73,3 +77,8 @@ func _on_again_pressed():
 func _on_back_pressed():
 	ClickSound.find_child("AudioStreamPlayer").play()
 	get_tree().change_scene_to_file("res://scenes/home.tscn")
+
+
+func _on_replete_hunger_timeout():
+	$hunger.value += 10
+	State.hungerStatus += 10

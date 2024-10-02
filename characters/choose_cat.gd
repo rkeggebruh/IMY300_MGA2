@@ -85,18 +85,24 @@ func _on_cat_one_area_input_event(viewport, event, shape_idx):
 		print('clicked on cat one')
 		ClickSound.find_child("AudioStreamPlayer").play()
 		State.catOptOne = true
+		State.catOptTwo = false
+		State.catOptThree = false
 		get_tree().change_scene_to_file("res://scenes/pr_etraining.tscn")
 
 func _on_cat_two_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed('leftClick'):
 		print('clicked on cat one')
 		ClickSound.find_child("AudioStreamPlayer").play()
+		State.catOptOne = false
 		State.catOptTwo = true
+		State.catOptThree = false
 		get_tree().change_scene_to_file("res://scenes/pr_etraining.tscn")
 
 func _on_cat_three_area_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed('leftClick'):
 		print('clicked on cat one')
 		ClickSound.find_child("AudioStreamPlayer").play()
+		State.catOptOne = false
+		State.catOptTwo = false
 		State.catOptThree = true
 		get_tree().change_scene_to_file("res://scenes/pr_etraining.tscn")

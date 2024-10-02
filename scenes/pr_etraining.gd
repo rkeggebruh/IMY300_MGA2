@@ -59,7 +59,7 @@ func _process(delta):
 		if State.catOptOne:
 			$ninjaCat/fireballCat.play("handMove")
 		elif State.catOptTwo:
-			$ninjaCat/ak47.play("flipKick")
+			$ninjaCat/ak47.play("walkShoot")
 		elif State.catOptThree:
 			$ninjaCat/sprite.play("roundKick")
 		#$ninjaCat/sprite.play("roundKick")

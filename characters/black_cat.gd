@@ -77,7 +77,10 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == "getUp":
 		$AnimatedSprite2D.play("walk")
 		$walk.play()
-		State.catSpeed = 0.08
+		if State.dexterityStatus < 60:
+			State.catSpeed = 0.04
+		else:
+			State.catSpeed = 0.08
 		$onWalk.start()
 		onWalk = true
 
@@ -99,7 +102,11 @@ func _on_walk_timer_timeout():
 	$onWalk.start()
 	onWalk = true
 	$walk.play()
-	State.catSpeed = 0.08
+	#State.catSpeed = 0.08
+	if State.dexterityStatus < 60:
+		State.catSpeed = 0.04
+	else:
+		State.catSpeed = 0.08
 	$AnimatedSprite2D.play("walk")
 
 

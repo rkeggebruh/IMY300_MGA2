@@ -21,6 +21,7 @@ var current_action:String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$dexterity.value = State.dexterityStatus
 	$trainer.hide()
 	$ColorRect.hide()
 	$ColorRect/RichTextLabel.bbcode_enabled = true
@@ -32,7 +33,7 @@ func _ready():
 	$minusPoint.hide()
 	$plusPoint.hide()
 	$labelRKick.hide()
-	
+	$repleteDex.start()
 	# Create a random display order
 	_randomize_label_order()
 	
@@ -176,6 +177,7 @@ func _process(delta):
 		#$plusPoint.show()
 		$trainer.show()
 		$yippee.play()
+		#$woosh.play()
 		print("calling next label in space")
 		#_show_next_label()$break.start()
 		_hide_all_labels()
@@ -197,6 +199,7 @@ func _process(delta):
 		#$plusPoint.show()
 		$trainer.show()
 		$yippee.play()
+		#$woosh.play()
 		print("calling next label in UP")
 		#_show_next_label()
 		_hide_all_labels()
@@ -223,6 +226,7 @@ func _process(delta):
 		#$plusPoint.show()
 		$trainer.show()
 		$yippee.play()
+		#$woosh.play()
 		
 	
 	if countLeft == 2:
@@ -245,13 +249,14 @@ func _process(delta):
 		#$plusPoint.show()
 		$trainer.show()
 		$yippee.play()
+		#$woosh.play()
 		
 	
 	if countRight == 6:
 		if State.catOptOne:
 			$ninjaCat/fireballCat.play("handMove")
 		elif State.catOptTwo:
-			$ninjaCat/ak47.play("flipKick")
+			$ninjaCat/ak47.play("walkShoot")
 		elif State.catOptThree:
 			$ninjaCat/sprite.play("roundKick")
 		#print("PLAYING IN THE RIGHT")
@@ -266,6 +271,7 @@ func _process(delta):
 		#$plusPoint.show()
 		$trainer.show()
 		$yippee.play()
+		#$woosh.play()
 		countRight = 0
 
 # Shuffle the labels and create a random order
@@ -314,6 +320,7 @@ func _hide_all_labels():
 		$break.stop()
 		$display.stop()
 		$ColorRect.show()
+		$repleteDex.stop()
 		$letterTimer.start()
 		#CEHCK - stop game after this and go back to home screen
 		$Heart3.hide()
@@ -430,3 +437,8 @@ func _on_makeit_harder_3_timeout():
 	$display.wait_time = 1.3
 	$break.wait_time = 0.1
 	$makeitHarder3.start()
+
+
+func _on_replete_dex_timeout():
+	$dexterity.value += 10
+	State.dexterityStatus += 10

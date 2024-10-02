@@ -9,6 +9,7 @@ var catBed = false
 var insOne = true
 
 func _ready():
+	$boredom2.value = State.boredStatus
 	$done.hide()
 	
 
@@ -21,6 +22,7 @@ func _process(delta):
 			$intro.hide()
 	
 	if soap and food and lamp and cup and plant and catBed:
+		Input.set_custom_mouse_cursor(null)
 		$done.show()
 	
 	# Get the mouse position
@@ -41,30 +43,48 @@ func _process(delta):
 
 func _on_cup_area_mouse_entered():
 	cup = true
+	$knockOff2.play()
+	$boredom2.value += 5
+	State.boredStatus += 5
 	$Cup/cupOff.play("knock")
 
 
 func _on_plant_area_mouse_entered():
 	plant = true
+	$knockOff2.play()
+	$boredom2.value += 5
+	State.boredStatus += 5
 	$Plant/plantOff.play("knock")
 
 
 func _on_soap_area_mouse_entered():
 	soap = true
+	$knockOff2.play()
+	$boredom2.value += 5
+	State.boredStatus += 5
 	$Soap/soapOff.play("knock")
 
 
 func _on_cat_food_area_mouse_entered():
 	food = true
+	$knockOff2.play()
+	$boredom2.value += 5
+	State.boredStatus += 5
 	$CatFood/foodOf.play("knock")
 
 
 func _on_lamp_areea_mouse_entered():
 	lamp = true
+	$knockOff2.play()
+	$boredom2.value += 5
+	State.boredStatus += 5
 	$Lamp/lampOff.play("knock")
 
 func _on_cat_bed_area_mouse_entered():
 	catBed = true
+	$knockOff2.play()
+	$boredom2.value += 5
+	State.boredStatus += 5
 	$Catbed/catBedOff.play("knock")
 
 

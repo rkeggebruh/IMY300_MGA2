@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://hsx6ueb7tbij"]
+[gd_scene load_steps=27 format=3 uid="uid://hsx6ueb7tbij"]
 
 [ext_resource type="Texture2D" uid="uid://clrr7maa7r4bx" path="res://assets/49685498_9285857.jpg" id="1_5fdoc"]
 [ext_resource type="Script" path="res://scenes/chase_again.gd" id="1_wq7ei"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dhexc7nwpw26w" path="res://assets/Cat-2-Walk.png" id="7_hm801"]
 [ext_resource type="FontFile" uid="uid://buuxi283du55d" path="res://fonts/m5x7.ttf" id="9_0qwex"]
 [ext_resource type="AudioStream" uid="uid://ca2on01xneoil" path="res://audio/lady hear me tonight (instrumental) (slowedreverb).mp3" id="9_kychd"]
+[ext_resource type="Texture2D" uid="uid://caym6e6yokrl5" path="res://assets/cat food.png" id="10_c4hyq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jveo7"]
 atlas = ExtResource("7_hm801")
@@ -91,6 +92,13 @@ bg_color = Color(0.772549, 0.352941, 0.243137, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thfva"]
 bg_color = Color(0.580392, 0.247059, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kswlq"]
+bg_color = Color(0.6, 1, 0.784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="chaseAgain" type="Node2D"]
 script = ExtResource("1_wq7ei")
@@ -183,13 +191,6 @@ wait_time = 0.5
 [node name="letterTimer" type="Timer" parent="."]
 wait_time = 0.08
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 1252.0
-offset_top = 200.0
-offset_right = 1449.0
-offset_bottom = 288.0
-color = Color(0.0666667, 0.501961, 0.803922, 1)
-
 [node name="intro" type="ColorRect" parent="."]
 z_index = 2
 offset_left = -25.0
@@ -248,7 +249,26 @@ stream = ExtResource("9_kychd")
 volume_db = -15.0
 autoplay = true
 
+[node name="hunger" type="ProgressBar" parent="."]
+offset_left = 60.0
+offset_top = 49.0
+offset_right = 315.0
+offset_bottom = 76.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_kswlq")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="CatFood" type="Sprite2D" parent="hunger"]
+position = Vector2(-9, 14)
+scale = Vector2(0.0548499, 0.0509824)
+texture = ExtResource("10_c4hyq")
+
+[node name="repleteHunger" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="pressed" from="ColorRect/VBoxContainer/again" to="." method="_on_again_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="timeout" from="breakTimer" to="." method="_on_break_timer_timeout"]
 [connection signal="timeout" from="letterTimer" to="." method="_on_letter_timer_timeout"]
+[connection signal="timeout" from="repleteHunger" to="." method="_on_replete_hunger_timeout"]

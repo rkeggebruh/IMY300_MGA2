@@ -17,4 +17,10 @@ func _on_resume_pressed():
 
 
 func _on_exit_to_main_pressed():
+	ClickSound.find_child("AudioStreamPlayer").play()
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+
+func _on_options_pressed():
+	ClickSound.find_child("AudioStreamPlayer").play()
+	get_tree().change_scene_to_file("res://scenes/home.tscn")

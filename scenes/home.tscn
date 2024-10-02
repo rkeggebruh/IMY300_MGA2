@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://chiy7402jppk"]
+[gd_scene load_steps=80 format=3 uid="uid://chiy7402jppk"]
 
 [ext_resource type="Script" path="res://scenes/home.gd" id="1_1df4t"]
 [ext_resource type="Texture2D" uid="uid://b26fyqtre1xdf" path="res://assets/turw-pixelicious (1).png" id="1_r1qvv"]
@@ -20,8 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://c1ioqyd1dpvw" path="res://assets/catbed.png" id="18_07ao3"]
 [ext_resource type="Texture2D" uid="uid://c1om412lk7ytc" path="res://assets/Cat-2-Laying.png" id="20_m8up0"]
 [ext_resource type="AudioStream" uid="uid://bkg0mblk25fyx" path="res://audio/Cat Purring Sound Effect!.mp3" id="21_fivqh"]
+[ext_resource type="Texture2D" uid="uid://b7wnd8m8bjcqu" path="res://assets/catPawShort.png" id="22_ln0tr"]
 [ext_resource type="PackedScene" uid="uid://c47dh28peh6c1" path="res://UI/ui.tscn" id="22_v8gqg"]
 [ext_resource type="Texture2D" uid="uid://djhp5cdlsoo22" path="res://assets/img.png" id="23_uqxhp"]
+[ext_resource type="Texture2D" uid="uid://dsy1eirg6qocj" path="res://assets/punch.png" id="23_xcir4"]
 [ext_resource type="Texture2D" uid="uid://beki7rswbg4yv" path="res://assets/lightOnWall-pixelicious (1).png" id="25_acs55"]
 [ext_resource type="Texture2D" uid="uid://brunjxg8je1ff" path="res://assets/punch (1).png" id="26_3w7iy"]
 [ext_resource type="Texture2D" uid="uid://cifi2fnnkasbw" path="res://assets/exportSign.png" id="27_gtkq0"]
@@ -59,6 +61,13 @@ corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ned1c"]
 bg_color = Color(0.305882, 0.890196, 0.803922, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4q7x"]
+bg_color = Color(1, 0.690196, 0.388235, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -303,6 +312,27 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mqh6r"]
 _data = {
 "arrow": SubResource("Animation_1nha1")
+}
+
+[sub_resource type="Animation" id="Animation_x8da8"]
+resource_name = "knock"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(328, 173), Vector2(318, 173), Vector2(328, 173)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bout0"]
+_data = {
+"knock": SubResource("Animation_x8da8")
 }
 
 [sub_resource type="Animation" id="Animation_o0rmr"]
@@ -624,15 +654,20 @@ offset_left = 57.0
 offset_top = 156.0
 offset_right = 307.0
 offset_bottom = 183.0
-
-[node name="deplete" type="Timer" parent="."]
-wait_time = 5.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_l4q7x")
+value = 100.0
+show_percentage = false
 
 [node name="heart2" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(53, 40)
 scale = Vector2(0.134722, 0.134722)
 texture = ExtResource("17_pa20h")
+
+[node name="CatPaw" type="Sprite2D" parent="."]
+position = Vector2(56, 124)
+scale = Vector2(0.105322, 0.105322)
+texture = ExtResource("22_ln0tr")
 
 [node name="CatFood" type="Sprite2D" parent="."]
 position = Vector2(55, 85)
@@ -641,9 +676,9 @@ texture = ExtResource("15_yhoo6")
 
 [node name="dexterity2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(52, 171)
-scale = Vector2(2.3, 2.3)
-texture = ExtResource("30_fg12k")
+position = Vector2(54, 163)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("23_xcir4")
 
 [node name="heart1Time" type="Timer" parent="."]
 
@@ -700,7 +735,6 @@ wait_time = 6.0
 stream = ExtResource("21_fivqh")
 
 [node name="UI" parent="." instance=ExtResource("22_v8gqg")]
-visible = false
 
 [node name="ExportSign" type="Sprite2D" parent="."]
 position = Vector2(983, 205)
@@ -752,11 +786,10 @@ autoplay = true
 wait_time = 150.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_left = -21.0
-offset_top = -19.0
+offset_top = -3.0
 offset_right = 1176.0
-offset_bottom = 674.0
+offset_bottom = 690.0
 color = Color(0.968627, 0, 0.886275, 0.419608)
 
 [node name="welcom" type="Label" parent="ColorRect"]
@@ -847,7 +880,20 @@ offset_bottom = 198.0
 theme_override_fonts/font = ExtResource("28_day6o")
 theme_override_font_sizes/font_size = 40
 text = "Meowchi's bored meter <3
-Play minigames to keep it up"
+Make sure he doesn't knock off"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="arr4" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 121.0
+offset_right = 807.998
+offset_bottom = 223.0
+theme_override_fonts/font = ExtResource("28_day6o")
+theme_override_font_sizes/font_size = 40
+text = "Meowchi's dexterity meter <3
+Make sure he doesn't get slow"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -859,7 +905,7 @@ offset_right = 726.0
 offset_bottom = 280.0
 theme_override_fonts/font = ExtResource("28_day6o")
 theme_override_font_sizes/font_size = 40
-text = "3 frames for 3 minigames
+text = "Frames for all the minigames
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -885,13 +931,23 @@ libraries = {
 }
 
 [node name="Arrow3" type="Sprite2D" parent="ColorRect"]
-position = Vector2(330.881, 131)
+position = Vector2(333, 131)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("30_h4e00")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Arrow3"]
 libraries = {
 "": SubResource("AnimationLibrary_mqh6r")
+}
+
+[node name="arrow4" type="Sprite2D" parent="ColorRect"]
+position = Vector2(318, 173)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("30_h4e00")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/arrow4"]
+libraries = {
+"": SubResource("AnimationLibrary_bout0")
 }
 
 [node name="threeArrs" type="AnimationPlayer" parent="ColorRect"]
@@ -925,6 +981,18 @@ stream = ExtResource("34_aji81")
 [node name="heart" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("35_q10lm")
 
+[node name="deplete" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="depleteFood" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="depleteBoredom" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="depleteDexterity" type="Timer" parent="."]
+wait_time = 12.0
+
 [connection signal="input_event" from="Picture/hungerBtn" to="." method="_on_hunger_btn_input_event"]
 [connection signal="mouse_entered" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Picture/hungerBtn" to="." method="_on_hunger_btn_mouse_exited"]
@@ -934,10 +1002,13 @@ stream = ExtResource("35_q10lm")
 [connection signal="input_event" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_input_event"]
 [connection signal="mouse_entered" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Picture3/dexterityBtn" to="." method="_on_dexterity_btn_mouse_exited"]
-[connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
 [connection signal="timeout" from="heart1Time" to="." method="_on_heart_1_time_timeout"]
 [connection signal="mouse_entered" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_entered"]
 [connection signal="mouse_exited" from="Path2D/catPath/black cat/pettingCat" to="." method="_on_petting_cat_mouse_exited"]
 [connection signal="body_entered" from="inCatBed" to="." method="_on_in_cat_bed_body_entered"]
 [connection signal="timeout" from="catSleepTimer" to="." method="_on_cat_sleep_timer_timeout"]
 [connection signal="timeout" from="getBiggerTimer" to="." method="_on_get_bigger_timer_timeout"]
+[connection signal="timeout" from="deplete" to="." method="_on_deplete_timeout"]
+[connection signal="timeout" from="depleteFood" to="." method="_on_deplete_food_timeout"]
+[connection signal="timeout" from="depleteBoredom" to="." method="_on_deplete_boredom_timeout"]
+[connection signal="timeout" from="depleteDexterity" to="." method="_on_deplete_dexterity_timeout"]
